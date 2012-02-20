@@ -1,0 +1,16 @@
+
+	   * { margin: 0; padding: 0; }
+	   p { padding: 10px; }
+	   .loginLI{
+	   display:inline;
+	   }
+	   .loginUL{
+	   list-style-type:none;
+	   margin:0;
+	   padding:0;
+	   }
+	   #login {position:absolute; left:0; top:0; width:100%; text-align:right;}
+	   #banner {position: absolute; left:0; top: 20; width: 100%; background-color:red; text-align:right;}
+	   #left { position: absolute; left: 0; top: 50; width: 20%; }
+	   #right { position: absolute; right: 0; top: 50; width: 80%; }
+		
