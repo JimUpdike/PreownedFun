@@ -9,8 +9,33 @@
 	   margin:0;
 	   padding:0;
 	   }
-	   #login {position:absolute; left:0; top:0; width:100%; text-align:right;}
-	   #banner {position: absolute; left:0; top: 20; width: 100%; background-color:red; text-align:right;}
-	   #left { position: absolute; left: 0; top: 50; width: 20%; }
-	   #right { position: absolute; right: 0; top: 50; width: 80%; }
-		
+	   .browseUL{
+	   list-style-type:none;
+	   margin:0;
+	   padding:0;
+	   }
+	   .browseLIHeader{
+	   	     display:block;
+		 width:60px;
+		 font-style:italic;
+	   }
+	   .browseLI{
+	     display:block;
+		 width:60px;
+	
+	   }
+	   table,td,th{
+	    border:1px solid black;
+	   }
+	   #login {position:absolute; left:0; top:20; width:100%; text-align:right;}
+	   #banner {position: absolute; left:0; top: 40; width: 100%; background-color:red; text-align:right;}
+	   #left { position: absolute; left: 0; top: 70; width: 10%; border-style:solid; border-color:blue; }
+	   #right { position: absolute; right: 0; top: 70; width: 85%; }
+	   .displayTable{
+	   width:100%;
+	   
+	   }
+	 .off {
+	 background-color: FFFFAA;
+	 }
+	 .

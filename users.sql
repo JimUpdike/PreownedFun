@@ -1,11 +1,11 @@
-DROP DATABASE IF EXISTS users;
-CREATE DATABASE IF NOT EXISTS users;
-GRANT ALL PRIVILEGES ON users.* TO 'Useruser'@'localhost' identified by 'user';
-
-USE users;
+DROP DATABASE IF EXISTS userdb;
+CREATE DATABASE IF NOT EXISTS userdb;
+GRANT ALL PRIVILEGES ON userdb.* TO 'Useruser'@'localhost' identified by 'user';
+USE userdb;
 CREATE TABLE userRep (
-	id int NOT NULL auto_increment,
-	username VARCHAR(20) NOT NULL;
-	password VARCHAR (20) NOT NULL;
-	PRIMARY KEY (id) 
+	id INT NOT NULL AUTO_INCREMENT,
+	username VARCHAR(20),
+	password VARCHAR (20),
+	PRIMARY KEY (id)
 	);
+INTSERT INTO userRep VALUES (0, jim, test);
