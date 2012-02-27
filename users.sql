@@ -11,4 +11,4 @@ CREATE TABLE userRep (
 INTSERT INTO userRep VALUES (0, 'jim', 'test'); 
 INSERT INTO userRep VALUES (1, 'kb', 'ijkl');
 INSERT INTO userRep VALUES (2, 'alex','abcd');
-INSERT INTO userRep VALUES (4, 'shane', 'efgh'
+INSERT INTO userRep VALUES (4, 'shane', 'efgh');
