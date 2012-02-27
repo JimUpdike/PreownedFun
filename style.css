@@ -27,8 +27,8 @@
 	   table,td,th{
 	    border:1px solid black;
 	   }
-	   #login {position:absolute; left:0; top:20; width:100%; text-align:right;}
-	   #banner {position: absolute; left:0; top: 40; width: 100%; background-color:red; text-align:right;}
+       #bannerLeft {position: absolute; left:0; top: 10; width: 50%; background-color:red; text-align:left;}
+	   #bannerRight {position: absolute; right:0; top: 10; width: 50%; background-color:red; text-align:right;}
 	   #left { position: absolute; left: 0; top: 70; width: 10%; border-style:solid; border-color:blue; }
 	   #right { position: absolute; right: 0; top: 70; width: 85%; }
 	   .displayTable{
