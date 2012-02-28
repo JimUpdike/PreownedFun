@@ -6,5 +6,5 @@
 		Re-type<br/>Password:<input type="password" name="password2" />
 		<input type="submit" value="Register" />
 	</form>
-
+	test
 </html>
