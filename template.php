@@ -11,6 +11,7 @@
 			echo "<a href=\"accountSettings.php\">Account Settings</a>    ";
 		}
 		else {
+			echo "<a href=\"register.php\">Register</a>    ";
 			echo "<a href=\"login.php\">Login</a>    ";
 		}
 	?>
