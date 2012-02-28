@@ -1,11 +1,18 @@
 <html>
+<?php include "template.php";
+session_start();
+include "db_connect.php";
+ ?>
+<div id="right">
+<h2>Login</h2></br>
 <form action="login2.php" method="post">
-<input type="text" name="username"/>
+Username: <input type="text" name="username"/>
 <br>
-<input type="password" name="password"/>
+Password: <input type="password" name="password"/>
 <br>
 <input type="submit" value="Login!" />
 </form>
 
 
+</div>
 </html>

@@ -6,12 +6,14 @@
 	<p>
 	<?php 
 		session_start();
-		echo "<a href=\"index.php\">Home</a>     ";
+		echo "<a href=\"index.php\">Home</a> ";
+		echo "<a href=\"userList.php\">User Index</a> ";
 		if (isset($_SESSION['username'])){
-			echo "<a href=\"accountSettings.php\">Account Settings</a>    ";
+			echo "<a href=\"accountSettings.php\">Account Settings</a> ";
 		}
 		else {
-			echo "<a href=\"login.php\">Login</a>    ";
+			echo "<a href=\"login.php\">Login</a> ";
+			echo "<a href=\"register.php\">Create Account</a> ";
 		}
 	?>
 	</p>
