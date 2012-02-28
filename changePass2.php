@@ -3,44 +3,19 @@
 include "template.php"; 
 ?>
 <div id="left">
-<i><b><u>Browse Box</u></b></i>
-		<ul class=browseUL>
-		<li class=browseLIHeader>
-			Price:
-		 </li>
-		 <li class=browseLI>
-			0.1-10.00$
+<i><b><u>Account settings index</u></b></i>
+<table class="displayTable">
+<ul class=browseUL>
+	
+			<li class=browseLI>
+			<a href="changePass.php"> Change Password </a></br></br>
 			</li>
-			<li>
-			10.01-20.00$
+		<li class=browseLI>
+			<a href="logout.php"> Logout </a>
 			</li>
-			<li>
-			etc
-		   </li>
 		    <br/>
-			<li class=browseLIHeader>
-			Quality
-		 </li>
-		
-		 <li class=browseLI>
-			</li>
-			Poor
-			<li class=browseLI>
-			Mediocre
-		   </li>
-			<li class=browseLI>
-			Fair
-			</li>
-			<li class=browseLI>
-			Good
-		   </li>
-		   <li class=browseLI>
-			Great
-		   </li>
-		   <li class=browseLI>
-			Mint
-		   </li>
 		</ul>
+</table>
 	
 
 </div>
@@ -50,11 +25,10 @@ include "template.php";
   $oldPw = $_POST['oldPassword'];
   $newPw = $_POST['newPassword'];
   $newPw2 = $_POST['newPassword2'];
-  #$username=$_SESSION['username'];
-  $username='alex';
+  $username=$_SESSION['username'];
   $query = "select * from userRep where username='$username' AND password='$oldPw';";
   $result = mysqli_query($db, $query);
-  if ($row = mysqli_fetch_array($result)){
+  if ($row = mysqli_fetch_array($result) && $newPw == $newPw2){
 	echo "Your password was successfully changed!";
 	$query2 = "update userRep set password='$newPw' where username='$username';";
 	$result2 = mysqli_query($db, $query2) or die("Error Querying Database");

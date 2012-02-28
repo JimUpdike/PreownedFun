@@ -4,45 +4,19 @@
 <?php include "template.php"; ?>
 
 <div id="left">
-<i><b><u>Browse Box</u></b></i>
-		<ul class=browseUL>
-		<li class=browseLIHeader>
-			Price:
-		 </li>
-		 <li class=browseLI>
-			0.1-10.00$
-			</li>
-			<li>
-			10.01-20.00$
-			</li>
-			<li>
-			etc
-		   </li>
-		    <br/>
-			<li class=browseLIHeader>
-			Quality
-		 </li>
-		
-		 <li class=browseLI>
-			</li>
-			Poor
-			<li class=browseLI>
-			Mediocre
-		   </li>
-			<li class=browseLI>
-			Fair
-			</li>
-			<li class=browseLI>
-			Good
-		   </li>
-		   <li class=browseLI>
-			Great
-		   </li>
-		   <li class=browseLI>
-			Mint
-		   </li>
-		</ul>
+<i><b><u>Account settings index</u></b></i>
+<table class="displayTable">
+<ul class=browseUL>
 	
+			<li class=browseLI>
+			<a href="changePass.php"> Change Password </a></br></br>
+			</li>
+		<li class=browseLI>
+			<a href="logout.php"> Logout </a>
+			</li>
+		    <br/>
+		</ul>
+</table>
 
 </div>
 <div id="right">

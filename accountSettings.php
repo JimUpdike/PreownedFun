@@ -9,7 +9,7 @@ include "db_connect.php";
 <ul class=browseUL>
 	
 			<li class=browseLI>
-			Link to change password stuff should go here
+			<a href="changePass.php"> Change Password </a></br></br>
 			</li>
 		<li class=browseLI>
 			<a href="logout.php"> Logout </a>
