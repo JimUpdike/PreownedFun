@@ -1,145 +1,5 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
-<?php /*
-<link rel="stylesheet" href="style.css" type="text/css" />
-<body>
-	<div id="login">
-    <ul class=loginUL>
-	<li class = loginLI>
-	Login or account settings should go here.
-	</li>
-	</ul>
-	</div>
-	<div id="banner">
-	<form action=searchController.php method=get>
-     <input type=text name=username />
-    <input type=submit value="Search!" />
-	<br/>	
-	
-	</div>
-    <div id="left">
-	<i><b><u>Browse Box</u></b></i>
-		<ul class=browseUL>
-		<li class=browseLIHeader>
-			Price:
-		 </li>
-		 <li class=browseLI>
-			0.1-10.00$
-			</li>
-			<li>
-			10.01-20.00$
-			</li>
-			<li>
-			etc
-		   </li>
-		    <br/>
-			<li class=browseLIHeader>
-			Quality
-		 </li>
-		
-		 <li class=browseLI>
-			</li>
-			Poor
-			<li class=browseLI>
-			Mediocre
-		   </li>
-			<li class=browseLI>
-			Fair
-			</li>
-			<li class=browseLI>
-			Good
-		   </li>
-		   <li class=browseLI>
-			Great
-		   </li>
-		   <li class=browseLI>
-			Mint
-		   </li>
-		</ul>
-	
-	</div>
-
-    <div id="right">
-       <table class="displayTable">
-	   <tr>
-	   <th> Name </th>
-	   <th> Quality </th>
-	   <th> Price </th>
-	   <th> Date Posted </th>
-	   </tr>
-	   <tr>
-	   <td> test The Game </td>
-	   <td> Poor </td>
-	   <td> 1000000.00$ </td>
-	   <td> 2/22/2012 </td>
-		</tr>	 
-		<tr>
-	   	   <td class=off> Perfect The Game </td>
-	   <td class=off> Mint </td>
-	   <td class=off> .01$ </td>
-	   <td class=off> 2/12/2012 </td>
-	   </tr>
-	   <tr>
-	   <td> test The Game </td>
-	   <td> Poor </td>
-	   <td> 1000000.00$ </td>
-	   <td> 2/22/2012 </td>
-		</tr>
-			<tr>
-	   	   <td class=off> Perfect The Game </td>
-	   <td class=off> Mint </td>
-	   <td class=off> .01$ </td>
-	   <td class=off> 2/12/2012 </td>
-	   </tr>
-	   <tr>
-	   <td> test The Game </td>
-	   <td> Poor </td>
-	   <td> 1000000.00$ </td>
-	   <td> 2/22/2012 </td>
-		</tr>
-			<tr>
-	   	   <td class=off> Perfect The Game </td>
-	   <td class=off> Mint </td>
-	   <td class=off> .01$ </td>
-	   <td class=off> 2/12/2012 </td>
-	   </tr>
-	   <tr>
-	   <td> test The Game </td>
-	   <td> Poor </td>
-	   <td> 1000000.00$ </td>
-	   <td> 2/22/2012 </td>
-		</tr>
-			<tr>
-	   	   <td class=off> Perfect The Game </td>
-	   <td class=off> Mint </td>
-	   <td class=off> .01$ </td>
-	   <td class=off> 2/12/2012 </td>
-	   </tr>
-	   <tr>
-	   <td> test The Game </td>
-	   <td> Poor </td>
-	   <td> 1000000.00$ </td>
-	   <td> 2/22/2012 </td>
-		</tr>
-			<tr>
-	   	   <td class=off> Perfect The Game </td>
-	   <td class=off> Mint </td>
-	   <td class=off> .01$ </td>
-	   <td class=off> 2/12/2012 </td>
-	   </tr>
-	   <tr>
-	   <td> test The Game </td>
-	   <td> Poor </td>
-	   <td> 1000000.00$ </td>
-	   <td> 2/22/2012 </td>
-		</tr>
-	   </table>
-		</div>
-
-</body>
-*/?>
-
 <?php include "template.php"; ?>
-
 <div id="left">
 <i><b><u>Browse Box</u></b></i>
 		<ul class=browseUL>
@@ -147,37 +7,64 @@
 			Price:
 		 </li>
 		 <li class=browseLI>
-			0.1-10.00$
+		<a href="naviBar.php?Column=Price&&Type=0.00">	$0.00-9.99</a>
 			</li>
-			<li>
-			10.01-20.00$
+			<li=browseLI>
+		<a href="naviBar.php?Column=Price&&Type=10.00">	$10.00-19.99</a>
 			</li>
-			<li>
-			etc
+			<li=browseLI>
+		<a href="naviBar.php?Column=Price&&Type=20.00">	$20.00-29.99</a>
+			</li>
+			<li=browseLI>
+		<a href="naviBar.php?Column=Price&&Type=30.00">	$30.00-39.99</a>
+			</li>
+			<li=browseLI>
+		<a href="naviBar.php?Column=Price&&Type=40.00">	$40.00-49.99</a>
+			</li>
+			<li=browseLI>
+		<a href="naviBar.php?Column=Price&&Type=50.00">	$50.00-59.99</a>
+			</li>
+			<li=browseLI>
+		<a href="naviBar.php?Column=Price&&Type=60.00">	$60.00-69.99</a>
+			</li>
+			<li=browseLI>
+		<a href="naviBar.php?Column=Price&&Type=70.00">	$70.00-79.99</a>
+			</li>
+			<li=browseLI>
+		<a href="naviBar.php?Column=Price&&Type=80.00">	$80.00-89.99</a>
+			</li>
+
+			<li=browseLI>
+		<a href="naviBar.php?Column=Price&&Type=90.00">	$90.00-99.99</a>
+			</li>
+			</br>
+			<li=browseLI>
+		<a href="naviBar.php?Column=Price&&Type=100.00">$100.00+</a>
+			</li>
 		   </li>
 		    <br/>
 			<li class=browseLIHeader>
-			Quality
+			Condition
 		 </li>
 		
 		 <li class=browseLI>
-			</li>
-			Poor
-			<li class=browseLI>
-			Mediocre
-		   </li>
-			<li class=browseLI>
-			Fair
-			</li>
-			<li class=browseLI>
-			Good
-		   </li>
-		   <li class=browseLI>
-			Great
-		   </li>
-		   <li class=browseLI>
-			Mint
-		   </li>
+			<a href="naviBar.php?Column=Condition&&Type=Poor">Poor </a>
+		</li>
+		 <li class=browseLI>
+			<a href="naviBar.php?Column=Condition&&Type=Mediocre">Mediocre </a>
+		</li>
+		 <li class=browseLI>
+			<a href="naviBar.php?Column=Condition&&Type=Fair">Fair </a>
+		</li>
+		 <li class=browseLI>
+			<a href="naviBar.php?Column=Condition&&Type=Good">Good </a>
+		</li>
+		 <li class=browseLI>
+			<a href="naviBar.php?Column=Condition&&Type=Great">Great </a>
+		</li>
+		 <li class=browseLI>
+			<a href="naviBar.php?Column=Condition&&Type=Mint">Mint </a>
+		</li>
 		</ul>
 	
 
@@ -188,74 +75,34 @@
 	   <th> Name </th>
 	   <th> Quality </th>
 	   <th> Price </th>
-	   <th> Date Posted </th>
 	   </tr>
-	   <tr>
-	   <td> test The Game </td>
-	   <td> Poor </td>
-	   <td> 1000000.00$ </td>
-	   <td> 2/22/2012 </td>
-		</tr>	 
-		<tr>
-	   	   <td class=off> Perfect The Game </td>
-	   <td class=off> Mint </td>
-	   <td class=off> .01$ </td>
-	   <td class=off> 2/12/2012 </td>
-	   </tr>
-	   <tr>
-	   <td> test The Game </td>
-	   <td> Poor </td>
-	   <td> 1000000.00$ </td>
-	   <td> 2/22/2012 </td>
-		</tr>
-			<tr>
-	   	   <td class=off> Perfect The Game </td>
-	   <td class=off> Mint </td>
-	   <td class=off> .01$ </td>
-	   <td class=off> 2/12/2012 </td>
-	   </tr>
-	   <tr>
-	   <td> test The Game </td>
-	   <td> Poor </td>
-	   <td> 1000000.00$ </td>
-	   <td> 2/22/2012 </td>
-		</tr>
-			<tr>
-	   	   <td class=off> Perfect The Game </td>
-	   <td class=off> Mint </td>
-	   <td class=off> .01$ </td>
-	   <td class=off> 2/12/2012 </td>
-	   </tr>
-	   <tr>
-	   <td> test The Game </td>
-	   <td> Poor </td>
-	   <td> 1000000.00$ </td>
-	   <td> 2/22/2012 </td>
-		</tr>
-			<tr>
-	   	   <td class=off> Perfect The Game </td>
-	   <td class=off> Mint </td>
-	   <td class=off> .01$ </td>
-	   <td class=off> 2/12/2012 </td>
-	   </tr>
-	   <tr>
-	   <td> test The Game </td>
-	   <td> Poor </td>
-	   <td> 1000000.00$ </td>
-	   <td> 2/22/2012 </td>
-		</tr>
-			<tr>
-	   	   <td class=off> Perfect The Game </td>
-	   <td class=off> Mint </td>
-	   <td class=off> .01$ </td>
-	   <td class=off> 2/12/2012 </td>
-	   </tr>
-	   <tr>
-	   <td> test The Game </td>
-	   <td> Poor </td>
-	   <td> 1000000.00$ </td>
-	   <td> 2/22/2012 </td>
-		</tr>
+	  <?php
+	include "db_connect.php";
+		if (isSet($_SESSION['dbnav'])){
+			$display = $_SESSION['dbnav'];
+		}
+		else{
+			$query = "Select * from currentPostings";
+			$display = mysqli_query($db, $query)
+				 or die ("ERROR SELECTING");
+		}
+	$i = 0; 
+	while($row = mysqli_fetch_array($display)){
+	$post_ID = $row['post_id'];
+	$title = $row['gameName'];
+	$condition = $row['cond'];
+ 	$price = $row['price'];
+	if ($i % 2 == 0){
+		$td = "<td class=off>";
+	}
+else {
+	$td = "<td>";
+}
+	echo"<tr>$td $title </td> $td $condition </td> $td $price </td></tr>";	 
+	$i++;
+}
+		?>
+
 	   </table>
 </div>
 </html>
