@@ -8,6 +8,11 @@
 		session_start();
 		echo "<a href=\"index.php\">Home</a> ";
 		echo "<a href=\"userList.php\">User Index</a> ";
+		
+		//added this here
+		echo "<a href = \"postAgame.php\">Post A Game</a>";
+		
+		
 		if (isset($_SESSION['username'])){
 			echo "<a href=\"accountSettings.php\">Account Settings</a> ";
 		}
