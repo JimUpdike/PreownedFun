@@ -8,7 +8,7 @@ include "db_connect.php";
 	$conditionQ = conditionCheck();
 	$platformQ = platformCheck();
 	$morethanOne = False;
-	$query = "Select * from currentPostings WHERE ";
+	$query = "Select currentPostings.*, userRep.username, userRep.rating from currentPostings INNER JOIN userRep ON currentPostings.seller_id = userRep.id WHERE ";
 	if ($priceQ !== FALSE){
 		$query = $query.$priceQ;
 		$morethanOne=True;		
@@ -26,29 +26,32 @@ include "db_connect.php";
 		if ($morethanOne==True){
 			$query=$query." AND ".$platformQ;
 		}
-		else {
+		else{
 		$query = $query.$platformQ;
 		$morethanOne=True;	
 		}
 	}
 	echo "<br/> $query <br/>";
-	$result = mysqli_query($db, $query) 
-		or die ("ERROR SELECTING");
-	$_SESSION['dbNav'] = $result;
+	$_SESSION['dbNav'] = $query;
 	header ('Location: index.php');
 }
 else {
 	echo "Something went wrong. Please return to index and try again";
 }
-
 function priceCheck(){
 	if($_GET['Column'] == 'Price'){
 		$type1 = $_GET['Type'];
+		if ($type1 > 100){
+			$s = "currentPostings.price > $type1";
+		}
+		else{
 		$type2 = $type1 + 9.99;
-		$s = "price > $type1 AND Price <= $type2";
+		$s = "currentPostings.price > $type1 AND currentPostings.price <= $type2";
+		}
 		$_SESSION ['nav']['0'] = $s;
-		echo "<br/> $s <br/>";	
-		return $s;
+		echo "<br/> $s <br/>";		
+	return $s;
+		
 	}
 	 if (isSet( $_SESSION['nav']['0'])){
 		return $_SESSION ['nav']['0'];
@@ -61,7 +64,7 @@ function priceCheck(){
 function conditionCheck(){
 	if($_GET['Column'] == 'Condition'){
 		$type1 = $_GET['Type'];
-		$s = "cond = '$type1'" ;
+		$s = "currentPostings.cond = '$type1'" ;
 		$_SESSION ['nav']['1'] = $s;
 		echo "<br/> $s <br/>";	
 		return $s;
@@ -76,7 +79,7 @@ function conditionCheck(){
 function platformCheck(){
 	if($_GET['Column'] == 'Platform'){
 		$type1 = $_GET['Type'];
-		$s = "platform  = '$type1'" ;
+		$s = "currentPostings.platform  = '$type1'" ;
 		$_SESSION ['nav']['2'] = $s;
 		echo "<br/> $s <br/>";	
 		return $s;

@@ -75,30 +75,39 @@
 	   <th> Name </th>
 	   <th> Quality </th>
 	   <th> Price </th>
+	   <th> Seller </th>
+	   <th> Seller Rating </th>
 	   </tr>
 	  <?php
 	include "db_connect.php";
-		if (isSet($_SESSION['dbnav'])){
-			$display = $_SESSION['dbnav'];
+		if (isSet($_SESSION['dbNav'])){
+			 $query =  $_SESSION['dbNav'];
 		}
 		else{
-			$query = "Select * from currentPostings";
-			$display = mysqli_query($db, $query)
+			$query = "Select currentPostings.*, userRep.username, userRep.rating from currentPostings INNER JOIN userRep ON currentPostings.seller_id = userRep.id";
+		}	
+		$display = mysqli_query($db, $query)
 				 or die ("ERROR SELECTING");
-		}
+		
+	
 	$i = 0; 
 	while($row = mysqli_fetch_array($display)){
 	$post_ID = $row['post_id'];
 	$title = $row['gameName'];
 	$condition = $row['cond'];
  	$price = $row['price'];
+	$seller = $row['username'];
+	$seller_rating = $row['rating'];
+	if ($seller_rating == -1){
+	 $seller_rating = "Not Rated";
+	}
 	if ($i % 2 == 0){
 		$td = "<td class=off>";
 	}
 else {
 	$td = "<td>";
 }
-	echo"<tr>$td $title </td> $td $condition </td> $td $price </td></tr>";	 
+	echo"<tr>$td $title </td> $td $condition </td> $td $price </td> $td $seller </td> $td $seller_rating </td></tr>";	 
 	$i++;
 }
 		?>
