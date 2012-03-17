@@ -30,7 +30,7 @@
 
 	$row = mysqli_fetch_array($result);
 	if($row == null) {
-		$query = "insert into userRep values (0, '$name', '$pass');";
+		$query = "insert into userRep values (0, '$name', '$pass', -1);";
 		mysqli_query($db, $query);
 
 		$_SESSION['username'] = $name;

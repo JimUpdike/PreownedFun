@@ -13,6 +13,9 @@ include "db_connect.php";
 <br>
 <tr><td>Creators:</td><td><input type="text" name="creators"/></td></tr>
 <br>
+<br>
+<tr><td>Price:</td><td><input type="text" name="Price"/></td></tr>
+<br>
 <tr><td>Genre:</td><td>
 <select name="genre"/>
 <option>N/A</option>

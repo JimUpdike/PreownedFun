@@ -66,8 +66,14 @@
 			<a href="naviBar.php?Column=Condition&&Type=Mint">Mint </a>
 		</li>
 		</ul>
-	
 
+<br/>
+	
+<?php
+ if (isset($_SESSION['dbNav'])){
+		echo '<a href="removeNavigation.php"> Remove Navigation </a>';
+	}
+?>
 </div>
 <div id="right">
        <table class="displayTable">
@@ -94,6 +100,7 @@
 	while($row = mysqli_fetch_array($display)){
 	$post_ID = $row['post_id'];
 	$title = $row['gameName'];
+	$href = "<a href=gamePost?id=$post_ID>$title</a>";
 	$condition = $row['cond'];
  	$price = $row['price'];
 	$seller = $row['username'];
@@ -107,7 +114,7 @@
 else {
 	$td = "<td>";
 }
-	echo"<tr>$td $title </td> $td $condition </td> $td $price </td> $td $seller </td> $td $seller_rating </td></tr>";	 
+	echo"<tr>$td $href </td> $td $condition </td> $td $price </td> $td $seller </td> $td $seller_rating </td></tr>";	 
 	$i++;
 }
 		?>

@@ -29,10 +29,16 @@ include "db_connect.php";
 		$result = mysqli_query ($db, $query)
 		or die ("error selecting");
    if ($row = mysqli_fetch_array($result))
-	{
+	{	$uID = $row['id'];
 		echo "Thank you for logging in ".$row['username'];
 		echo " <br/> You can use the navigation bar on the right to hopefully figure out where to go";
-		
+		$q2 = "select * from currentPostings cp INNERJOIN userRep uR ON $uID === cp.seller_id"; 
+		$r2 = mysqli_query($db, $query)
+			or die ("error getting list");
+		while ($row2 = mysqli_fetch_array($r2){
+			
+		}
+		echo "<br/>  Currently you have:";
 	
    }
    }
