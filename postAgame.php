@@ -54,7 +54,7 @@ include "db_connect.php";
 <br>
 
 
-<tr><td>Maual/case(included):</td><td>
+<tr><td>Manual/case included: </td><td>
 <select name="manual">
 <option>N/A</option>
 <option>YES</option>
@@ -89,10 +89,9 @@ include "db_connect.php";
 <option>Xbox</option>
 
 </select></td></tr>
-<br>
-
-<tr><td><input type="submit" value="POST!" /></td></tr>
 </table>
+
+<input type="submit" value="POST!" />
 </form>
 
 </div>
