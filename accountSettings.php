@@ -1,6 +1,6 @@
 <html>
 <?php include "template.php";
-session_start();
+//session_start();
 include "db_connect.php";
  ?>
 <div id="left">
@@ -35,8 +35,8 @@ include "db_connect.php";
 		$q2 = "select * from currentPostings cp INNERJOIN userRep uR ON $uID === cp.seller_id"; 
 		$r2 = mysqli_query($db, $query)
 			or die ("error getting list");
-		while ($row2 = mysqli_fetch_array($r2){
-			
+		while ($row2 = mysqli_fetch_array($r2)){
+			echo "Something";
 		}
 		echo "<br/>  Currently you have:";
 	

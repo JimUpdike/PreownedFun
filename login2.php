@@ -18,7 +18,8 @@
    if ($row = mysqli_fetch_array($result))
    {
 		$_SESSION['username'] = $name;
-		echo "<p>Thanks for logging in, $name</p>\n";
+		$_SESSION['userID'] = $row['id'];
+		echo "<p>Thanks for logging in, $name, </p>\n";
    		
 		echo "<p><a href=\"index.php\">Continue</a></p>";
 	}
