@@ -18,7 +18,7 @@
 		}
 
 	?>
-	<form action="register2.php" method="post">
+	<form action="registerController.php" method="post">
 		Username: <input type="text" name="username" /><br/>
 		Password: <input type="password" name="password" /><br/>
 		Re-type<br/>Password:<input type="password" name="password2" />

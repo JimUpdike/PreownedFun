@@ -8,12 +8,12 @@
 	
 	Please fill in at least one of the fields below.<br/><br/>
 	Search by...<br/>
-	<form action="searchController.php" method="post">
+	<form action="result.php" method="post">
 
 <table>
-<tr><td>Game:</td><td><input type="text" name="gameName"/></td></tr>
+<tr><td>Game:</td><td><input type="text" name="game"/></td></tr>
 <br>
-<tr><td>Max price:</td><td><input type="text" name="Price"/></td></tr>
+<tr><td>Max price:</td><td><input type="text" name="price"/></td></tr>
 <br>
 <tr><td>Genre:</td><td>
 <select name="genre"/>
