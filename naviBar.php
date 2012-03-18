@@ -46,7 +46,7 @@ function priceCheck(){
 		}
 		else{
 		$type2 = $type1 + 9.99;
-		$s = "currentPostings.price > $type1 AND currentPostings.price <= $type2";
+		$s = "currentPostings.price >= $type1 AND currentPostings.price <= $type2";
 		}
 		$_SESSION ['nav']['0'] = $s;
 		echo "<br/> $s <br/>";		
