@@ -15,6 +15,7 @@
 		
 		if (isset($_SESSION['username'])){
 			echo "<a href=\"accountSettings.php\">Account Settings</a> ";
+			echo "<a href=\"logout.php\">Logout</a> ";
 		}
 		else {
 
