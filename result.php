@@ -18,7 +18,7 @@
 		$platform = $_GET['console'];
 
 
-		$query = "select * from currentpostings where gamename like '%%'";
+		$query = "select currentpostings.*, userrep.username, userrep.rating from currentpostings inner join userrep on currentpostings.seller_id = userrep.id where gamename like '%%'";
 		if($gamename != null) {
 			$query .= " and gamename like '%$gamename%'";
 		}
@@ -40,16 +40,44 @@
 		$query .= ";";
 		
 		$result = mysqli_query($db, $query) or die ("ERROR SELECTING");
-		$row = mysqli_fetch_array($result);
-
-		if($row != null) {
-			echo "$row";
-		} else {
-			echo "No search results.";
-		}
-	
 	?>
+		
+	<table class="displayTable">
+		<tr><th> Name </th>
+		<th> Quality </th>
+		<th> Price </th>
+		<th> Seller </th>
+		<th> Seller Rating </th></tr>
+		
+		<?php
+			$rowcount = 0;
+			$row = mysqli_fetch_array($result);
+			while($row != False) {
+				$rowcount++;
+				if(($rowcount % 2) == 1) { //odd rows yellow
+					$td = "<td class=off>";
+				} else { //even rows white
+					$td = "<td>";
+				}
 
+				echo "<tr>";
+				$link = "gamepost.php?id=".$row['post_id'];
+				echo $td.'<a href="'.$link.'">'.$row['gameName']."<a></td>";
+				echo $td.$row['cond']."</td>";
+				echo $td.$row['price']."</td>";
+				echo $td.$row['username']."</td>";
+				$rating = $row['rating'];
+				if($rating = -1) {
+					$rating = "Not Rated";
+				}
+				echo $td.$rating."</td>";
+				echo "</tr>";
+				
+				$row = mysqli_fetch_array($result);
+			}
+		?>
+
+	</table>
 
 </div>
 </body>
