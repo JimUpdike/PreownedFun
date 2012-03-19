@@ -20,20 +20,19 @@ include "db_connect.php";
 <select name="genre"/>
 <option>N/A</option>
 <option>Platformer</option>
-<option>SideScroller</option>
-<option>Shooter</option>
-<option>First-Person-Shooter (or FPS)</option>
+<option>Side-Scroller</option>
+<option>First-Person Shooter (FPS)</option>
+<option>Third-Person Shooter</option>
 <option>Adventure</option>
-<option>Platform</option>
-<option>Role-Playing Games (RPGs)</option>
+<option>Role-Playing Game (RPG)</option>
 <option>Puzzle</option>
-<option>Simulations</option>
-<option>Strategy/Tactics</option>
+<option>Simulation</option>
+<option>Real-Time Strategy (RTS)</option>
 <option>Sports</option>
 <option>Fighting</option>
 <option>Dance/Rhythm</option>
 <option>Survival Horror</option>
-<option>Hybrids</option>
+<option>Other</option>
 </select></td></tr>
 <br>
 
@@ -45,9 +44,9 @@ include "db_connect.php";
 <tr><td>Rating:</td><td>
 <select name="rating">
 <option>N/A</option>
-<option>Early Childhood(EC)</option>
-<option>Everyone(E)</option>
-<option>EVERYONE 10+ (E10+)</option>
+<option>Early Childhood (EC)</option>
+<option>Everyone (E)</option>
+<option>Everyone 10+ (E10+)</option>
 <option>Teen (T)</option>
 <option>Mature (M)</option>
 <option>Adults Only (AO)</option>
@@ -76,8 +75,9 @@ include "db_connect.php";
 	
 <tr><td>Console: </td><td>
 <select name="console">
-<option>N/A</option>
-<option>Super Nintendo Entertainment System</option>
+<option></option>
+<option>Nintendo Entertainment System (NES)</option>
+<option>Super Nintendo Entertainment System (SNES)</option>
 <option>Sega Saturn</option>
 <option>Dreamcast</option>
 <option>Nintendo 64</option>

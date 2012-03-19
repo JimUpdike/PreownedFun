@@ -10,33 +10,32 @@
 <div id="right">
 
 	<?php
-		$gamename = $_POST['game'];
-		$price = $_POST['price'];
-		//$rating = $_POST['rating'];
-		$genre = $_POST['genre'];
-		$cond = $_POST['cond'];
-		$platform = $_POST['console'];
-		//$seller = $_POST['seller'];
-		
+		$gamename = $_GET['game'];
+		$price = $_GET['price'];
+		$esrb = $_GET['rating'];
+		$genre = $_GET['genre'];
+		$cond = $_GET['cond'];
+		$platform = $_GET['console'];
+
 
 		$query = "select * from currentpostings where gamename like '%%'";
 		if($gamename != null) {
-			//$query .= " and gamename like '%$gamename%'";
+			$query .= " and gamename like '%$gamename%'";
 		}
 		if($price != null) {
-			//$query .= " and price like '%$price%'";
+			$query .= " and price < $price";
+		}
+		if($esrb != null) {
+			$query .= " and esrb == '$esrb'";
 		}
 		if($genre != null) {
-			echo "$genre";
-			//$query .= " and genre like '%$genre%'";
+			$query .= " and genre == '$genre'";
 		}
 		if($cond != null) {
-			echo "$cond";
-			//$query .= " and cond like '%$cond%'";
+			$query .= " and cond == '$cond'";
 		}
 		if($platform != null) {
-			echo $platform;
-			//$query .= " and platform like '%$platform%'";
+			$query .= " and platform == '$platform'";
 		}
 		$query .= ";";
 		

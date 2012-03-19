@@ -14,11 +14,11 @@
 <table>
 <tr><td>Game:</td><td><input type="text" name="game"/></td></tr>
 <br>
-<tr><td>Max price:</td><td><input type="text" name="price"/></td></tr>
+<tr><td>Max price: $</td><td><input type="text" name="price"/></td></tr>
 <br>
 <tr><td>Genre:</td><td>
 <select name="genre"/>
-<option>N/A</option>
+<option></option>
 <option>Shooter</option>
 <option>First-Person-Shooter (or FPS)</option>
 <option>Adventure</option>
@@ -37,7 +37,7 @@
 
 <tr><td>Rating:</td><td>
 <select name="rating">
-<option>N/A</option>
+<option></option>
 <option>Early Childhood(EC)</option>
 <option>Everyone(E)</option>
 <option>EVERYONE 10+ (E10+)</option>
@@ -51,7 +51,7 @@
 <br>
 <tr><td>Condition:</td><td> 
 <select name="cond"/>
-<option>N/A</option>
+<option></option>
 <option>Mint Condition</option>
 <option>Good</option>
 <option>Acceptable</option>
@@ -61,7 +61,7 @@
 	
 <tr><td>Console: </td><td>
 <select name="console">
-<option>N/A</option>
+<option></option>
 <option>Sega Saturn</option>
 <option>Dreamcast</option>
 <option>Nintendo 64</option>
@@ -74,7 +74,7 @@
 <option>Playstation 1</option>
 </select></td></tr>
 
-<tr><td>Seller:</td><td><input type="text" name="seller"/></td></tr>
+<!--- <tr><td>Seller:</td><td><input type="text" name="seller"/></td></tr> ---->
 </table>
 
 <input type="submit" value="Submit!" />
