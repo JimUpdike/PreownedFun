@@ -19,6 +19,7 @@ CREATE TABLE currentPostings (
 	gameName VARCHAR (75) NOT NULL default '',
         creators VARCHAR (50) NOT NULL default '',
 	genre VARCHAR (30) NOT NULL default '',
+	ESRB VARCHAR (12) NOT NULL default 'NOT RATED',
 	yearMade INT(4) NOT NULL default 1,
 	manual VARCHAR (3)NOT NULL default '',
 	cond VARCHAR (15)NOT NULL default '',
@@ -31,6 +32,6 @@ CREATE TABLE currentPostings (
 	PRIMARY KEY (post_id)
 );
 
-INSERT INTO currentPostings VALUES(0, 'Legend of Zelda A Link To the Past','Nintendo', 'Action/Adventure', 1991, 'Yes', 'Mint', 'Super Nintendo Entertainment System',  59.99, 2);
-INSERT INTO currentPostings VALUES(0, 'Super Mario World','Nintendo','Platformer',1992 ,'No', 'Poor', 'Super Nintendo Entertainment System',  19.99, 2);
-INSERT INTO currentPostings VALUES(0, 'Megaman X','Capcom','SideScroller',1993 ,'Yes', 'Mint', 'Super Nintendo Entertainment System',  59.99, 1);
+INSERT INTO currentPostings VALUES(0, 'Legend of Zelda A Link To the Past','Nintendo', 'Action/Adventure', 'T',1991, 'Yes', 'Mint', 'Super Nintendo Entertainment System',  59.99, 2);
+INSERT INTO currentPostings VALUES(0, 'Super Mario World','Nintendo','Platformer','E',1992 ,'No', 'Poor', 'Super Nintendo Entertainment System',  19.99, 2);
+INSERT INTO currentPostings VALUES(0, 'Megaman X','Capcom','SideScroller','M',1993 ,'Yes', 'Mint', 'Super Nintendo Entertainment System',  59.99, 1);
