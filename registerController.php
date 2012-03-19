@@ -32,7 +32,12 @@
 	if($row == null) {
 		$query = "insert into userRep values (0, '$name', '$pass', -1);";
 		mysqli_query($db, $query);
-
+		
+		$q2 = "select * from userRep WHERE username='$name'";
+		$r2 = mysqli_query($db, $q2);
+		if ($row2 = mysqli_fetch_array($r2)){
+			$_SESSION['userID'] = $row2['id'];
+		}
 		$_SESSION['username'] = $name;
 
 		header("Location: index.php");
