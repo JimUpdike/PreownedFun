@@ -26,16 +26,16 @@
 			$query .= " and price < $price";
 		}
 		if($esrb != null) {
-			$query .= " and esrb == '$esrb'";
+			$query .= " and esrb like '$esrb'";
 		}
 		if($genre != null) {
-			$query .= " and genre == '$genre'";
+			$query .= " and genre like '$genre'";
 		}
 		if($cond != null) {
-			$query .= " and cond == '$cond'";
+			$query .= " and cond like '$cond'";
 		}
 		if($platform != null) {
-			$query .= " and platform == '$platform'";
+			$query .= " and platform like '$platform'";
 		}
 		$query .= ";";
 		
