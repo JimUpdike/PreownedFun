@@ -17,12 +17,12 @@ INSERT INTO userRep VALUES (0, 'shane', 'efgh', -1);
 CREATE TABLE currentPostings (
 	post_id INT  NOT NULL AUTO_INCREMENT,
 	gameName VARCHAR (75) NOT NULL default '',
-        creators VARCHAR (50) NOT NULL default '',
+     creators VARCHAR (50) NOT NULL default '',
 	genre VARCHAR (30) NOT NULL default '',
 	yearMade INT(4) NOT NULL default 1,
 	manual VARCHAR (3)NOT NULL default '',
 	cond VARCHAR (15)NOT NULL default '',
-	platform VARCHAR (30)NOT NULL default '',
+	platform VARCHAR (40)NOT NULL default '',
 	price DEC(5,2) NOT NULL default 000.00,
 	seller_id INT NOT NULL,
 	CONSTRAINT userRep_seller_id_fk
@@ -31,6 +31,6 @@ CREATE TABLE currentPostings (
 	PRIMARY KEY (post_id)
 );
 
-INSERT INTO currentPostings VALUES(0, 'Legend of Zelda A Link To the Past','Nintendo', 'Action/Adventure', 1991, 'Yes', 'Mint', 'Super Nintendo Entertainment System',  59.99, 2);
+INSERT INTO currentPostings VALUES(0, 'Legend of Zelda A Link To the Past','Nintendo', 'Adventure', 1991, 'Yes', 'Mint', 'Super Nintendo Entertainment System',  59.99, 2);
 INSERT INTO currentPostings VALUES(0, 'Super Mario World','Nintendo','Platformer',1992 ,'No', 'Poor', 'Super Nintendo Entertainment System',  19.99, 2);
 INSERT INTO currentPostings VALUES(0, 'Megaman X','Capcom','SideScroller',1993 ,'Yes', 'Mint', 'Super Nintendo Entertainment System',  59.99, 1);

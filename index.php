@@ -100,7 +100,7 @@
 	while($row = mysqli_fetch_array($display)){
 	$post_ID = $row['post_id'];
 	$title = $row['gameName'];
-	$href = "<a href=gamePost?id=$post_ID>$title</a>";
+	$href = "<a href=gamePost.php?id=$post_ID>$title</a>";
 	$condition = $row['cond'];
  	$price = $row['price'];
 	$seller = $row['username'];
