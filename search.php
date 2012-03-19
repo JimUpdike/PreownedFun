@@ -6,9 +6,10 @@
 	?>
 	<div id="right">
 	
-	Please fill in at least one of the fields below.<br/><br/>
+	Please fill in at least one of the fields below,<br/>
+	or just press "Submit!" to browse all listings!<br/><br/>
 	Search by...<br/>
-	<form action="result.php" method="post">
+	<form action="result.php" method="get">
 
 <table>
 <tr><td>Game:</td><td><input type="text" name="game"/></td></tr>
