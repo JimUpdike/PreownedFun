@@ -19,6 +19,8 @@ include "db_connect.php";
 <tr><td>Genre:</td><td>
 <select name="genre"/>
 <option>N/A</option>
+<option>Platformer</option>
+<option>SideScroller</option>
 <option>Shooter</option>
 <option>First-Person-Shooter (or FPS)</option>
 <option>Adventure</option>
@@ -65,7 +67,7 @@ include "db_connect.php";
 <tr><td>Condition:</td><td> 
 <select name="cond"/>
 <option>N/A</option>
-<option>Mint Condition</option>
+<option>Mint</option>
 <option>Good</option>
 <option>Acceptable</option>
 <option>Bad</option>
@@ -75,6 +77,7 @@ include "db_connect.php";
 <tr><td>Console: </td><td>
 <select name="console">
 <option>N/A</option>
+<option>Super Nintendo Entertainment System</option>
 <option>Sega Saturn</option>
 <option>Dreamcast</option>
 <option>Nintendo 64</option>

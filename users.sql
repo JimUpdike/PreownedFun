@@ -17,13 +17,13 @@ INSERT INTO userRep VALUES (0, 'shane', 'efgh', -1);
 CREATE TABLE currentPostings (
 	post_id INT  NOT NULL AUTO_INCREMENT,
 	gameName VARCHAR (75) NOT NULL default '',
-        creators VARCHAR (50) NOT NULL default '',
+     creators VARCHAR (50) NOT NULL default '',
 	genre VARCHAR (30) NOT NULL default '',
 	ESRB VARCHAR (12) NOT NULL default 'NOT RATED',
 	yearMade INT(4) NOT NULL default 1,
 	manual VARCHAR (3)NOT NULL default '',
 	cond VARCHAR (15)NOT NULL default '',
-	platform VARCHAR (30)NOT NULL default '',
+	platform VARCHAR (40)NOT NULL default '',
 	price DEC(5,2) NOT NULL default 000.00,
 	seller_id INT NOT NULL,
 	CONSTRAINT userRep_seller_id_fk
