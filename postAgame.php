@@ -66,7 +66,7 @@ include "db_connect.php";
 <tr><td>Condition:</td><td> 
 <select name="cond"/>
 <option>N/A</option>
-<option>Mint</option>
+<option>Mint Condition</option>
 <option>Good</option>
 <option>Acceptable</option>
 <option>Bad</option>
