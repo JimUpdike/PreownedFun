@@ -13,9 +13,7 @@
 
 <table>
 <tr><td>Game:</td><td><input type="text" name="game"/></td></tr>
-<br>
 <tr><td>Max price: $</td><td><input type="text" name="price"/></td></tr>
-<br>
 <tr><td>Genre:</td><td>
 <select name="genre"/>
 <option></option>
@@ -34,7 +32,6 @@
 <option>Survival Horror</option>
 <option>Other</option>
 </select></td></tr>
-<br>
 
 <tr><td>Rating:</td><td>
 <select name="rating">
@@ -47,9 +44,7 @@
 <option>Adults Only (AO)</option>
 <option>Rating Pending</option>
 </select></td></tr>
-<br>
 
-<br>
 <tr><td>Condition:</td><td> 
 <select name="cond"/>
 <option></option>
@@ -58,7 +53,6 @@
 <option>Acceptable</option>
 <option>Bad</option>
 </select></td></tr>
-<br>
 	
 <tr><td>Console: </td><td>
 <select name="console">
@@ -79,7 +73,6 @@
 <option>Xbox</option>
 </select></td></tr>
 
-<!--- <tr><td>Seller:</td><td><input type="text" name="seller"/></td></tr> ---->
 </table>
 
 <input type="submit" value="Submit!" />
