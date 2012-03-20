@@ -64,7 +64,8 @@
 				echo $td.'<a href="'.$link.'">'.$row['gameName']."<a></td>";
 				echo $td.$row['cond']."</td>";
 				echo $td.$row['price']."</td>";
-				echo $td.$row['username']."</td>";
+				$username = $row['username'];
+				echo $td."<a href='profile.php?username=$username'>$username<a></td>";
 				$rating = $row['rating'];
 				if($rating = -1) {
 					$rating = "Not Rated";

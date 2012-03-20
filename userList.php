@@ -15,14 +15,15 @@
 <div id="right">
 <h2>User Index<h2></br>
 	<table class="displayTable">
-	<tr><th>Username</th><th>Profile Page(NYI)</th><th>Current Listings(NYI)</th></tr>
+	<tr><th>Username</th><th>Rating</th><tr>
 	<?php
 	include('db_connect.php');
-	$query = "SELECT username FROM userRep ORDER BY username";
+	$query = "SELECT * FROM userRep ORDER BY username";
 	$result = mysqli_query($db, $query) or die("Error Querying Database");
 	while($row = mysqli_fetch_array($result)) {
 		$username = $row['username'];
-		echo "<tr><td>$username</td><td>link</td><td>links</td></tr>\n";
+		$rating = $row['rating'];
+		echo "<tr><td><a href='profile.php?username=$username'>$username<a></td><td>$rating</td></tr>\n";
 	}
 					
 	mysqli_close($db);

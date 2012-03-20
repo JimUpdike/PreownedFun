@@ -178,7 +178,8 @@
 else {
 	$td = "<td>";
 }
-	echo"<tr>$td $href </td> $td $condition </td> $td $price </td> $td $seller </td> $td $seller_rating </td></tr>";	 
+	$sellerLink = "<a href='profile.php?username=$seller'>$seller<a>";
+	echo"<tr>$td $href </td> $td $condition </td> $td $price </td> $td $sellerLink </td> $td $seller_rating </td></tr>";	 
 	$i++;
 }
 		?>
