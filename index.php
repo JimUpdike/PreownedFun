@@ -42,11 +42,11 @@
 		<a href="naviBar.php?Column=Price&&Type=100.00">$100.00+</a>
 			</li>
 		   </li>
+		
 		    <br/>
 			<li class=browseLIHeader>
 			Condition
 		 </li>
-		
 		 <li class=browseLI>
 			<a href="naviBar.php?Column=Condition&&Type=Poor">Poor </a>
 		</li>
@@ -65,6 +65,70 @@
 		 <li class=browseLI>
 			<a href="naviBar.php?Column=Condition&&Type=Mint">Mint </a>
 		</li>
+		    <br/>
+			<li class=browseLIHeader>
+			Platform
+		 </li>
+		 <li class=browseLI>
+			<a href="naviBar.php?Column=Platform&&Type=Nintendo Entertainment System (NES)">Nintendo Entertainment System (NES)</a>
+		</li>
+			<br/>
+		 <li class=browseLI>
+			<a href="naviBar.php?Column=Platform&&Type=Super Nintendo Entertainment System (NES)">Super Nintendo Entertainment System (SNES)</a>
+		</li>
+			<br/>
+		 <li class=browseLI>
+			<a href="naviBar.php?Column=Platform&&Type=Sega Saturn">Sega Saturn</a>
+		</li>
+			<br/>
+
+		 <li class=browseLI>
+			<a href="naviBar.php?Column=Platform&&Type=Dreamcast">Dreamcast</a>
+		</li>
+			<br/>
+		 <li class=browseLI>
+			<a href="naviBar.php?Column=Platform&&Type=Nintendo 64">Nintendo 64</a>
+		</li>
+			<br/>
+		 <li class=browseLI>
+			<a href="naviBar.php?Column=Platform&&Type=Gamecube">Gamecube</a>
+		</li>	
+			<br/>
+		 <li class=browseLI>
+			<a href="naviBar.php?Column=Platform&&Type=Gameboy Advance">Gameboy Advance</a>
+		</li>	
+			<br/>
+		 <li class=browseLI>
+			<a href="naviBar.php?Column=Platform&&Type=Nintendo Wii">Nintendo Wii</a>
+		</li>	
+			<br/>
+		 <li class=browseLI>
+			<a href="naviBar.php?Column=Platform&&Type=Nintendo DS">Nintendo DS</a>
+		</li>	
+			<br/>
+		 <li class=browseLI>
+			<a href="naviBar.php?Column=Platform&&Type=Playstation 3">Playstation 3</a>
+		</li>	
+			<br/>
+		 <li class=browseLI>
+			<a href="naviBar.php?Column=Platform&&Type=Playstation 2">Playstation 2</a>
+		</li>	
+			<br/>
+		 <li class=browseLI>
+			<a href="naviBar.php?Column=Platform&&Type=Playstation 1">Playstation 1</a>
+		</li>	
+			<br/>
+		 <li class=browseLI>
+			<a href="naviBar.php?Column=Platform&&Type=Xbox">Xbox</a>
+		</li>	
+			<br/>
+		 <li class=browseLI>
+			<a href="naviBar.php?Column=Platform&&Type=Xbox 360">Xbox 360</a>
+		</li>	
+			<br/>
+		 <li class=browseLI>
+			<a href="naviBar.php?Column=Platform&&Type=Computer">Computer</a>
+		</li>	
 		</ul>
 
 <br/>

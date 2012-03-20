@@ -18,7 +18,7 @@
 		$platform = $_GET['console'];
 
 
-		$query = "select currentpostings.*, userrep.username, userrep.rating from currentpostings inner join userrep on currentpostings.seller_id = userrep.id where gamename like '%%'";
+		$query = "select currentPostings.*, userRep.username, userRep.rating from currentPostings inner join userRep on currentPostings.seller_id = userRep.id where gamename like '%%'";
 		if($gamename != null) {
 			$query .= " and gamename like '%$gamename%'";
 		}
@@ -38,7 +38,6 @@
 			$query .= " and platform like '$platform'";
 		}
 		$query .= ";";
-		
 		$result = mysqli_query($db, $query) or die ("ERROR SELECTING");
 	?>
 		

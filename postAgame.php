@@ -34,7 +34,7 @@ include "db_connect.php";
 
 <tr><td>Year:</td><td><input type="text" name="yearMade"/></td></tr>
 
-<tr><td>Rating:</td><td>
+<tr><td>ESRB Rating:</td><td>
 <select name="rating">
 <option>N/A</option>
 <option>Early Childhood (EC)</option>
@@ -79,7 +79,7 @@ include "db_connect.php";
 <option>Playstation 1</option>
 <option>Xbox 360</option>
 <option>Xbox</option>
-
+<option>Computer</option>
 </select></td></tr>
 </table>
 
