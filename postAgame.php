@@ -6,16 +6,13 @@ include "db_connect.php";
  ?>
 <div id="right">
 <h2>POST YOUR GAME</h2>
+<br/>
 
 <form action="postAgame2.php" method="post">
 <table>
 <tr><td>Name:</td><td><input type="text" name="gameName"/></td></tr>
-<br>
 <tr><td>Creators:</td><td><input type="text" name="creators"/></td></tr>
-<br>
-<br>
 <tr><td>Price:</td><td><input type="text" name="Price"/></td></tr>
-<br>
 <tr><td>Genre:</td><td>
 <select name="genre"/>
 <option>N/A</option>
@@ -34,12 +31,8 @@ include "db_connect.php";
 <option>Survival Horror</option>
 <option>Other</option>
 </select></td></tr>
-<br>
-
 
 <tr><td>Year:</td><td><input type="text" name="yearMade"/></td></tr>
-<br>
-
 
 <tr><td>Rating:</td><td>
 <select name="rating">
@@ -52,8 +45,6 @@ include "db_connect.php";
 <option>Adults Only (AO)</option>
 <option>Rating Pending</option>
 </select></td></tr>
-<br>
-
 
 <tr><td>Manual/case included: </td><td>
 <select name="manual">
@@ -62,7 +53,6 @@ include "db_connect.php";
 <option>NO</option>
 </select></td></tr>
 
-<br>
 <tr><td>Condition:</td><td> 
 <select name="cond"/>
 <option>N/A</option>
@@ -71,7 +61,6 @@ include "db_connect.php";
 <option>Acceptable</option>
 <option>Bad</option>
 </select></td></tr>
-<br>
 	
 <tr><td>Console: </td><td>
 <select name="console">
