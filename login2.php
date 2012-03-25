@@ -1,7 +1,7 @@
 <html>
 <?php
-	include "template.php";
 	session_start();
+	include "template.php";
 ?>
 
 <div id="right">
@@ -11,14 +11,14 @@
 	$pass = $_POST['password'];
 	
 	
-	$query = "select * from userRep WHERE username = '$name' AND password = '$pass'";
+	$query = "select * from users WHERE username = '$name' AND password = '$pass'";
    $result = mysqli_query($db, $query)
    or die ("ERROR SELECTING");
    
    if ($row = mysqli_fetch_array($result))
    {
 		$_SESSION['username'] = $name;
-		$_SESSION['userID'] = $row['id'];
+		$_SESSION['userID'] = $row['user_id'];
 		echo "<p>Thanks for logging in, $name, </p>\n";
    		
 		echo "<p><a href=\"index.php\">Continue</a></p>";

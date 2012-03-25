@@ -23,20 +23,20 @@
 	}
 	
 	
-	$query = "select * from userRep WHERE username = '$name'";
+	$query = "select * from users WHERE username = '$name'";
 	$result = mysqli_query($db, $query)
 	or die ("ERROR SELECTING");
    	
 
 	$row = mysqli_fetch_array($result);
 	if($row == null) {
-		$query = "insert into userRep values (0, '$name', '$pass', -1);";
+		$query = "insert into users values (0, '$name', '$pass', -1);";
 		mysqli_query($db, $query);
 		
-		$q2 = "select * from userRep WHERE username='$name'";
+		$q2 = "select * from users WHERE username='$name'";
 		$r2 = mysqli_query($db, $q2);
 		if ($row2 = mysqli_fetch_array($r2)){
-			$_SESSION['userID'] = $row2['id'];
+			$_SESSION['userID'] = $row2['user_id'];
 		}
 		$_SESSION['username'] = $name;
 

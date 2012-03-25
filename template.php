@@ -5,7 +5,6 @@
 	<div id="bannerLeft">
 	<p>
 	<?php 
-		session_start();
 		echo "<a href=\"index.php\">Home</a> ";
 		echo "<a href=\"search.php\">Search</a> ";
 		echo "<a href=\"userList.php\">User Index</a> ";

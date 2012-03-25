@@ -1,5 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
-<?php include "template.php"; ?>
+<?php 
+session_start();
+include "template.php"; ?>
 <div id="left">
 <i><b><u>Browse Box</u></b></i>
 		<ul class=browseUL>
@@ -146,7 +148,6 @@
 	   <th> Quality </th>
 	   <th> Price </th>
 	   <th> Seller </th>
-	   <th> Seller Rating </th>
 	   </tr>
 	  <?php
 	include "db_connect.php";
@@ -154,24 +155,27 @@
 			 $query =  $_SESSION['dbNav'];
 		}
 		else{
-			$query = "Select currentPostings.*, userRep.username, userRep.rating from currentPostings INNER JOIN userRep ON currentPostings.seller_id = userRep.id";
+			$query = "Select merch.*, users.username from for_sale INNER JOIN users ON for_sale.seller_id = users.user_id NATURAL JOIN merch";
 		}	
 		$display = mysqli_query($db, $query)
-				 or die ("ERROR SELECTING");
-		
-	
-	$i = 0; 
-	while($row = mysqli_fetch_array($display)){
-	$post_ID = $row['post_id'];
-	$title = $row['gameName'];
-	$href = "<a href=gamePost.php?id=$post_ID>$title</a>";
+				 or die ("ERROR SELECTING 1");
+	while($row = mysqli_fetch_array($display)){	 
+	$game_id = $row['game_id'];
+		$query_game = "select * from game_info where game_id = $game_id";
+		$display2 =mysqli_query($db, $query_game);
+	$i = 0;
+	while($row2 = mysqli_fetch_array($display2))
+	{
+	$post_id = $row['merch_id'];
+	$title = $row2['title'];
+	$href = "<a href=gamePost.php?id=$post_id>$title</a>";
 	$condition = $row['cond'];
  	$price = $row['price'];
 	$seller = $row['username'];
-	$seller_rating = $row['rating'];
-	if ($seller_rating == -1){
-	 $seller_rating = "Not Rated";
-	}
+//	$seller_rating = $row['rating'];
+//	if ($seller_rating == -1){
+//	 $seller_rating = "Not Rated";
+//	}
 	if ($i % 2 == 0){
 		$td = "<td class=off>";
 	}
@@ -179,8 +183,10 @@ else {
 	$td = "<td>";
 }
 	$sellerLink = "<a href='profile.php?username=$seller'>$seller<a>";
-	echo"<tr>$td $href </td> $td $condition </td> $td $price </td> $td $sellerLink </td> $td $seller_rating </td></tr>";	 
+	echo"<tr>$td $href </td> $td $condition </td> $td $price </td> $td $sellerLink </td> </tr>";
+//$td $seller_rating </td></tr>";	 
 	$i++;
+}
 }
 		?>
 

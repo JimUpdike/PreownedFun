@@ -3,6 +3,7 @@
 
 
 <?php
+session_start();
 include "template.php";
 ?>
 <div id="right">
@@ -20,10 +21,27 @@ include "template.php";
 	$cond = $_POST['cond'];
 	$console = $_POST['console'];
         $price = $_POST['Price'];	
-	$query = "INSERT INTO currentPostings VALUES (NULL,'$nme','$mkr','$gen','$esrb','$yr','$manul','$cond','$console', $price, $seller)";
-	$result = mysqli_query ($db,$query)
-	or die ("ERROR INSERTING");
-	mysqli_close($db);
+	$query_for_game = "Select * from game_info where title = '$nme'";
+	$result_for_game = mysqli_query($db, $query_for_game);
+	$row = mysqli_fetch_array($result_for_game);
+	if ($row == null){
+		$query_insert_game= "INSERT INTO game_info VALUES (null,'$nme','$mkr','$gen','$esrb','$yr','$console')";
+		$result_insert_game =mysqli_query($db, $query_insert_game) 
+			OR DIE ("ERROR INSERTING GAME");
+		
+		$query_insert_merch = "INSERT INTO merch VALUES (null, (select MAX(game_info.game_id) from game_info), $price, '$manul', '$cond')";
+		$result_insert_merch = mysqli_query($db, $query_insert_merch) 
+			OR DIE ("ERROR INSERTING MERCH");
+		echo "$seller I AM HERE";
+		$qs ="INSERT INTO for_sale VALUES ((SELECT MAX(merch_id) from merch), $seller)";
+		$result_insert_merch = mysqli_query($db, $qs)
+			 OR DIE ("ERROR INSERTING SALE");	
+	echo "I am here!";	
+	}
+//	$query = "INSERT INTO currentPostings VALUES (NULL,'$nme','$mkr','$gen','$esrb','$yr','$manul','$cond','$console', $price, $seller)";
+//	$result = mysqli_query ($db,$query)
+//	or die ("ERROR INSERTING");
+//	mysqli_close($db);
 	
 	
 	echo "<p><a href=\"index.php\">Continue</a></p>";	

@@ -1,4 +1,4 @@
 <?php
-$db = mysqli_connect ('localhost', 'Useruser', 'user', 'userdb')
+$db = mysqli_connect ('localhost', 'Preowneduser', 'user', 'preowneddb')
 or die ("ERROR");
 ?>
