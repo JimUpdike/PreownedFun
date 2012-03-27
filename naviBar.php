@@ -8,7 +8,8 @@ include "db_connect.php";
 	$conditionQ = conditionCheck();
 	$platformQ = platformCheck();
 	$morethanOne = False;
-	$query = "Select currentPostings.*, userRep.username, userRep.rating from currentPostings INNER JOIN userRep ON currentPostings.seller_id = userRep.id WHERE ";
+	$query = "Select merch.*, users.username from for_sale INNER JOIN users ON for_sale.seller_id = users.user_id NATURAL JOIN merch WHERE";  
+
 	if ($priceQ !== FALSE){
 		$query = $query.$priceQ;
 		$morethanOne=True;		
@@ -42,11 +43,11 @@ function priceCheck(){
 	if($_GET['Column'] == 'Price'){
 		$type1 = $_GET['Type'];
 		if ($type1 > 100){
-			$s = "currentPostings.price > $type1";
+			$s = "merch.price > $type1";
 		}
 		else{
 		$type2 = $type1 + 9.99;
-		$s = "currentPostings.price >= $type1 AND currentPostings.price <= $type2";
+		$s = "merch.price >= $type1 AND merch.price <= $type2";
 		}
 		$_SESSION ['nav']['0'] = $s;
 		echo "<br/> $s <br/>";		
@@ -64,7 +65,7 @@ function priceCheck(){
 function conditionCheck(){
 	if($_GET['Column'] == 'Condition'){
 		$type1 = $_GET['Type'];
-		$s = "currentPostings.cond = '$type1'" ;
+		$s = "merch.cond = '$type1'" ;
 		$_SESSION ['nav']['1'] = $s;
 		echo "<br/> $s <br/>";	
 		return $s;
@@ -79,7 +80,7 @@ function conditionCheck(){
 function platformCheck(){
 	if($_GET['Column'] == 'Platform'){
 		$type1 = $_GET['Type'];
-		$s = "currentPostings.platform  = '$type1'" ;
+		$s = "merch.platform  = '$type1'" ;
 		$_SESSION ['nav']['2'] = $s;
 		echo "<br/> $s <br/>";	
 		return $s;

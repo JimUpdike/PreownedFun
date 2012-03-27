@@ -10,10 +10,10 @@
 		echo "<a href=\"userList.php\">User Index</a> ";
 		
 		//added this here
-		echo "<a href = \"postAgame.php\">Post A Game</a> ";
 		
 		
 		if (isset($_SESSION['username'])){
+		echo "<a href = \"postAgame.php\">Post A Game</a> ";
 			echo "<a href=\"accountSettings.php\">Account Settings</a> ";
 			echo "<a href=\"logout.php\">Logout</a> ";
 		}

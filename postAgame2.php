@@ -11,6 +11,7 @@ include "template.php";
 <!----END--->
 <?php		
 	include "db_connect.php";
+	if (isset ($_SESSION['userID'])){
 	$seller = $_SESSION['userID'];
 	$nme = $_POST['gameName'];
 	$mkr = $_POST['creators'];
@@ -45,6 +46,13 @@ include "template.php";
 	
 	
 	echo "<p><a href=\"index.php\">Continue</a></p>";	
+}
+
+else{
+echo "You must login in to post a game!";
+	echo "<p><a href=\"index.php\">Continue</a></p>";	
+
+}
 	?>
 </div>
 </html>
