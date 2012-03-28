@@ -1,15 +1,8 @@
 <html>
-<!---do i include this portion ---->
 
 
 <?php
 session_start();
-include "template.php";
-?>
-<div id="right">
-
-<!----END--->
-<?php		
 	include "db_connect.php";
 	if (isset ($_SESSION['userID'])){
 	$seller = $_SESSION['userID'];
@@ -39,10 +32,16 @@ include "template.php";
 			 OR DIE ("ERROR INSERTING SALE");	
 	echo "I am here!";	
 	}
-//	$query = "INSERT INTO currentPostings VALUES (NULL,'$nme','$mkr','$gen','$esrb','$yr','$manul','$cond','$console', $price, $seller)";
-//	$result = mysqli_query ($db,$query)
-//	or die ("ERROR INSERTING");
-//	mysqli_close($db);
+	else{
+		$game_id =  $row["game_id"];
+		$query_insert_merch = "INSERT INTO merch VALUES (null, $game_id, $price, '$manul', '$cond')";
+		$result_insert_merch = mysqli_query($db, $query_insert_merch) 
+			OR DIE ("ERROR INSERTING MERCH");
+		$qs ="INSERT INTO for_sale VALUES ((SELECT MAX(merch_id) from merch), $seller)";
+		$result_insert_merch = mysqli_query($db, $qs)
+			 OR DIE ("ERROR INSERTING SALE");	
+		
+	}
 	
 	
 	echo "<p><a href=\"index.php\">Continue</a></p>";	
@@ -50,9 +49,11 @@ include "template.php";
 
 else{
 echo "You must login in to post a game!";
-	echo "<p><a href=\"index.php\">Continue</a></p>";	
+	echo "<p><a href=\"index.php\">Continue</a></p>";
 
 }
+
+
 	?>
 </div>
 </html>

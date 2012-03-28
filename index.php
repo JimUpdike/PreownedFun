@@ -53,10 +53,10 @@ include "template.php"; ?>
 			<a href="naviBar.php?Column=Condition&&Type=Poor">Poor </a>
 		</li>
 		 <li class=browseLI>
-			<a href="naviBar.php?Column=Condition&&Type=Mediocre">Mediocre </a>
+			<a href="naviBar.php?Column=Condition&&Type=Fair">Fair </a>
 		</li>
 		 <li class=browseLI>
-			<a href="naviBar.php?Column=Condition&&Type=Fair">Fair </a>
+			<a href="naviBar.php?Column=Condition&&Type=Acceptable">Acceptable </a>
 		</li>
 		 <li class=browseLI>
 			<a href="naviBar.php?Column=Condition&&Type=Good">Good </a>
@@ -155,19 +155,15 @@ include "template.php"; ?>
 			 $query =  $_SESSION['dbNav'];
 		}
 		else{
-			$query = "Select merch.*, users.username from for_sale INNER JOIN users ON for_sale.seller_id = users.user_id NATURAL JOIN merch";
+			$query = "SELECT merch.*, users.username, game_info.* from for_sale INNER JOIN users INNER JOIN game_info INNER JOIN merch on for_sale.seller_id = users.user_id and merch.merch_id = for_sale.merch_id and game_info.game_id = merch.game_id";
+
 		}	
-		$display = mysqli_query($db, $query)
-				 or die ("ERROR SELECTING 1");
+		$display = mysqli_query($db, $query) or die($query);
 	while($row = mysqli_fetch_array($display)){	 
 	$game_id = $row['game_id'];
-		$query_game = "select * from game_info where game_id = $game_id";
-		$display2 =mysqli_query($db, $query_game);
 	$i = 0;
-	while($row2 = mysqli_fetch_array($display2))
-	{
 	$post_id = $row['merch_id'];
-	$title = $row2['title'];
+	$title = $row['title'];
 	$href = "<a href=gamePost.php?id=$post_id>$title</a>";
 	$condition = $row['cond'];
  	$price = $row['price'];
@@ -186,7 +182,6 @@ else {
 	echo"<tr>$td $href </td> $td $condition </td> $td $price </td> $td $sellerLink </td> </tr>";
 //$td $seller_rating </td></tr>";	 
 	$i++;
-}
 }
 		?>
 

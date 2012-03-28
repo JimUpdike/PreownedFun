@@ -8,7 +8,8 @@ include "db_connect.php";
 	$conditionQ = conditionCheck();
 	$platformQ = platformCheck();
 	$morethanOne = False;
-	$query = "Select merch.*, users.username from for_sale INNER JOIN users ON for_sale.seller_id = users.user_id NATURAL JOIN merch WHERE";  
+	$query = "SELECT merch.*, users.username, game_info.* from for_sale INNER JOIN users INNER JOIN game_info INNER JOIN merch on for_sale.seller_id = users.user_id and merch.merch_id = for_sale.merch_id and game_info.game_id = merch.game_id WHERE ";
+
 
 	if ($priceQ !== FALSE){
 		$query = $query.$priceQ;
@@ -37,12 +38,14 @@ include "db_connect.php";
 	header ('Location: index.php');
 }
 else {
-	echo "Something went wrong. Please return to index and try again";
+ 	echo "Something went wrong. Please return to index and try again";
 }
 function priceCheck(){
 	if($_GET['Column'] == 'Price'){
-		$type1 = $_GET['Type'];
-		if ($type1 > 100){
+		$type1 = $_GET['Type'] + 0;
+		$number = $type1 + 0.00;
+		if ($number >= 100.00){
+			echo "Here!";
 			$s = "merch.price > $type1";
 		}
 		else{
@@ -80,7 +83,7 @@ function conditionCheck(){
 function platformCheck(){
 	if($_GET['Column'] == 'Platform'){
 		$type1 = $_GET['Type'];
-		$s = "merch.platform  = '$type1'" ;
+		$s = "game_info.platform  = '$type1'" ;
 		$_SESSION ['nav']['2'] = $s;
 		echo "<br/> $s <br/>";	
 		return $s;

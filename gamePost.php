@@ -13,8 +13,7 @@
 
   if(isSet($_GET['id'])) {
 	$game_id = $_GET['id'];
-	$query = "Select currentPostings.*,userRep.username,userRep.rating From currentPostings INNER JOIN userRep ON currentPostings.seller_id=userRep.id 
-			WHERE currentPostings.post_id = $game_id";
+	$query = "Select currentPostings.*,user.username, game_info.* From for_sale INNER JOIN users INNER JOIN game_info INNER JOIN merch ON for_sale.seller_id=users.user_id and for_sale.merch_id = merch.merch_id and merch.game_id = game_info.game_id";
 	$result = mysqli_query($db,$query) or die("Error Querying Database");
 	
 	if($row = mysqli_fetch_array($result)){
