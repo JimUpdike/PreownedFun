@@ -13,7 +13,7 @@ include "db_connect.php";
 <table>
 <tr><td>Name:</td><td><input type="text" name="gameName"/></td></tr>
 <tr><td>Creators:</td><td><input type="text" name="creators"/></td></tr>
-<tr><td>Price:</td><td><input type="text" name="Price"/></td></tr>
+<tr><td>Your Asking Price: $</td><td><input type="text" name="Price"/></td></tr>
 <tr><td>Genre:</td><td>
 <select name="genre"/>
 <option>N/A</option>
@@ -47,7 +47,7 @@ include "db_connect.php";
 <option>Rating Pending</option>
 </select></td></tr>
 
-<tr><td>Manual/case included: </td><td>
+<tr><td>Manual Included: </td><td>
 <select name="manual">
 <option>N/A</option>
 <option>YES</option>
