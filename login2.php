@@ -7,8 +7,8 @@
 <div id="right">
 <?php
 	include "db_connect.php";
-	$name = $_POST['username'];
-	$pass = $_POST['password'];
+	$name = mysqli_real_escape_string($db, trim($_POST['username']));
+	$pass =mysqli_real_escape_string($db, trim($_POST['password']));
 	
 	
 	$query = "select * from users WHERE username = '$name' AND password = SHA('$pass')";

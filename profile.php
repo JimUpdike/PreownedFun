@@ -2,6 +2,7 @@
 
 
 <?php 
+	session_start();
 	include "template.php"; 
 	$name = $_GET['username'];
 	include('db_connect.php');

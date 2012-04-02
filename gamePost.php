@@ -1,6 +1,7 @@
 <html>
 <body>
 <?php
+  session_start();
   include('template.php');
   include "db_connect.php";
 ?>
