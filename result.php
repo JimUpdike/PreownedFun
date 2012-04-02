@@ -10,7 +10,7 @@
 <div id="right">
 
 	<?php
-		$gamename = $_GET['game'];
+		$title = $_GET['game'];
 		$price = $_GET['price'];
 		$esrb = $_GET['rating'];
 		$genre = $_GET['genre'];
@@ -18,9 +18,9 @@
 		$platform = $_GET['console'];
 
 
-		$query = "select currentPostings.*, userRep.username, userRep.rating from currentPostings inner join userRep on currentPostings.seller_id = userRep.id where gamename like '%%'";
-		if($gamename != null) {
-			$query .= " and gamename like '%$gamename%'";
+		$query = "select merch.price, merch.cond, game_info.*, users.username, users.rating from for_sale inner join merch inner join game_info inner join users on for_sale.merch_id = merch.merch_id and for_sale.seller_id = users.user_id and merch.game_id = game_info.game_id where title like '%%'";
+		if($title != null) {
+			$query .= " and title like '%$title%'";
 		}
 		if($price != null) {
 			$query .= " and price < $price";
@@ -60,8 +60,8 @@
 				}
 
 				echo "<tr>";
-				$link = "gamepost.php?id=".$row['post_id'];
-				echo $td.'<a href="'.$link.'">'.$row['gameName']."<a></td>";
+				$link = "gamepost.php?id=".$row['game_id'];
+				echo $td.'<a href="'.$link.'">'.$row['title']."<a></td>";
 				echo $td.$row['cond']."</td>";
 				echo $td.$row['price']."</td>";
 				$username = $row['username'];
