@@ -19,11 +19,13 @@
 
 
 		$query = "select merch.price, merch.cond, game_info.*, users.username, users.rating from for_sale inner join merch inner join game_info inner join users on for_sale.merch_id = merch.merch_id and for_sale.seller_id = users.user_id and merch.game_id = game_info.game_id where title like '%%'";
+		
+		$query2 = "";
 		if($title != null) {
 			$query .= " and title like '%$title%'";
 		}
 		if($price != null) {
-			$query .= " and price < $price";
+			$query .= " and price <= $price";
 		}
 		if($esrb != null) {
 			$query .= " and esrb like '$esrb'";

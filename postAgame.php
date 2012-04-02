@@ -11,7 +11,7 @@ include "db_connect.php";
 
 <form action="postAgame2.php" method="post">
 <table>
-<tr><td>Name:</td><td><input type="text" name="gameName"/></td></tr>
+<tr><td>Title:</td><td><input type="text" name="gameName"/></td></tr>
 <tr><td>Creators:</td><td><input type="text" name="creators"/></td></tr>
 <tr><td>Your Asking Price: $</td><td><input type="text" name="Price"/></td></tr>
 <tr><td>Genre:</td><td>

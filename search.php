@@ -13,7 +13,7 @@
 	<form action="result.php" method="get">
 
 <table>
-<tr><td>Game:</td><td><input type="text" name="game"/></td></tr>
+<tr><td>Title:</td><td><input type="text" name="game"/></td></tr>
 <tr><td>Max price: $</td><td><input type="text" name="price"/></td></tr>
 <tr><td>Genre:</td><td>
 <select name="genre"/>
