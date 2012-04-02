@@ -1,7 +1,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 
-<?php include "template.php"; ?>
+<?php 
+session_start();
+include "template.php"; ?>
 
 <div id="left">
 <i><b><u>Account settings index</u></b></i>

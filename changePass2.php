@@ -1,5 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <?php
+session_start();
 include "template.php"; 
 ?>
 <div id="left">
@@ -25,12 +26,12 @@ include "template.php";
   $oldPw = $_POST['oldPassword'];
   $newPw = $_POST['newPassword'];
   $newPw2 = $_POST['newPassword2'];
-  $username=$_SESSION['username'];
-  $query = "select * from userRep where username='$username' AND password='$oldPw';";
+  $username= $_SESSION['username'];
+  $query = "select * from users where username='$username' AND password=SHA('$oldPw');";
   $result = mysqli_query($db, $query);
   if ($row = mysqli_fetch_array($result) && $newPw == $newPw2){
 	echo "Your password was successfully changed!";
-	$query2 = "update userRep set password='$newPw' where username='$username';";
+	$query2 = "update users set password='$newPw' where username='$username';";
 	$result2 = mysqli_query($db, $query2) or die("Error Querying Database");
   }
   else{

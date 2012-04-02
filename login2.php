@@ -11,13 +11,13 @@
 	$pass = $_POST['password'];
 	
 	
-	$query = "select * from users WHERE username = '$name' AND password = '$pass'";
+	$query = "select * from users WHERE username = '$name' AND password = SHA('$pass')";
    $result = mysqli_query($db, $query)
    or die ("ERROR SELECTING");
    
    if ($row = mysqli_fetch_array($result))
    {
-		$_SESSION['username'] = $name;
+		$_SESSION['username'] = $row['username'];
 		$_SESSION['userID'] = $row['user_id'];
 		echo "<p>Thanks for logging in, $name, </p>\n";
    		

@@ -1,6 +1,7 @@
 <html>
-<?php include "template.php";
-//session_start();
+<?php 
+session_start();
+include "template.php";
 include "db_connect.php";
  ?>
 <div id="left">
@@ -25,11 +26,11 @@ include "db_connect.php";
 	<?php 
 	if (isset($_SESSION['username'])){
 		$name = $_SESSION['username'];
-		$query = "select * from userRep WHERE username = '$name'";
+		$query = "select * from users WHERE username = '$name'";
 		$result = mysqli_query ($db, $query)
 		or die ("error selecting");
 	if ($row = mysqli_fetch_array($result))
-	{	$uID = $row['id'];
+	{	$uID = $row['user_id'];
 		echo "Thank you for logging in ".$row['username'];
 		echo " <br/> You can use the navigation bar on the right to hopefully figure out where to go";
 		echo "<br/>  Your current postings:";
@@ -46,15 +47,15 @@ include "db_connect.php";
 	<th> Price </th>
 	<th> Delete </th></tr>
 	<?php
-		$q2 = "select * from currentPostings cp where cp.seller_id = $uID"; 
+		$q2 = "select * from for_sale inner join merch inner join game_info on for_sale.seller_id = $uID and merch.merch_id = for_sale.merch_id and game_info.game_id = merch.game_id"; 
 		$r2 = mysqli_query($db, $q2)
 			or die ("error getting list");
 		while ($row2 = mysqli_fetch_array($r2)){
 			echo "<tr>";
-			echo "<td>".$row2['gameName']."</td>";
+			echo "<td>".$row2['title']."</td>";
 			echo "<td>".$row2['cond']."</td>";
 			echo "<td>".$row2['price']."</td>";
-			$link = "deletePost.php?id=".$row2['post_id'];
+			$link = "deletePost.php?id=".$row2['merch_id'];
 			echo "<td><a href=".$link.">Delete<a></td>";
 			echo "</tr>";
 		}

@@ -20,6 +20,7 @@
 	?>
 	<form action="registerController.php" method="post">
 		Username: <input type="text" name="username" /><br/>
+		Email: <input type="text" name="email" /> <br/>
 		Password: <input type="password" name="password" /><br/>
 		Re-type<br/>Password:<input type="password" name="password2" />
 		<input type="submit" value="Register" />
