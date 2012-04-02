@@ -26,9 +26,9 @@
 	</p>
 	</div>
 	<div id="bannerRight">
-	<form action=searchController.php method=get>
-     <input type=text name=username />
-    <input type=submit value="Search!" />
+	<form action=result.php method=get>
+		Find a game: <input type=text name=game />
+    		<input type=submit value="Search!" />
 	</form>
 	</br>
 	

@@ -10,13 +10,25 @@
 <div id="right">
 
 	<?php
-		$title = $_GET['game'];
-		$price = $_GET['price'];
-		$esrb = $_GET['rating'];
-		$genre = $_GET['genre'];
-		$cond = $_GET['cond'];
-		$platform = $_GET['console'];
-
+		if(isset($_GET['game'])) {
+			$title = $_GET['game'];
+		} else { $title = ""; }
+		if(isset($_GET['price'])) {
+			$price = $_GET['price'];
+		} else { $price = ""; }
+		if(isset($_GET['rating'])) {
+			$esrb = $_GET['rating'];
+		} else { $esrb = ""; }
+		if(isset($_GET['genre'])) {
+			$genre = $_GET['genre'];
+		} else { $genre = ""; }
+		if(isset($_GET['cond'])) {
+			$cond = $_GET['cond'];
+		} else { $cond = ""; }
+		if(isset($_GET['console'])) {
+			$platform = $_GET['console'];
+		} else { $platform = ""; }
+		
 
 		$query = "select merch.price, merch.cond, game_info.*, users.username, users.rating from for_sale inner join merch inner join game_info inner join users on for_sale.merch_id = merch.merch_id and for_sale.seller_id = users.user_id and merch.game_id = game_info.game_id where title like '%%'";
 		
