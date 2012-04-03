@@ -144,7 +144,7 @@ include "template.php"; ?>
 <div id="right">
 <?php
  	if (isset($_SESSION['navDisplay'][0] )||isset($_SESSION['navDisplay'][1]) || isset($_SESSION['naviDisplay'][2]) ){
-		$nowDis = "Narrowed diplayed games to games with:";
+		$nowDis = "Narrowed diplayed games to games with ";
 		$moreThanone1 = False;
 		if (isset($_SESSION['navDisplay'][0]) ){
 			$nowDis = $nowDis.$_SESSION['navDisplay'][0];
@@ -172,7 +172,7 @@ include "template.php"; ?>
 	   <th> Name </th>
 	   <th> Quality </th>
 	   <th> Price </th>
-	   <th> Seller </th>
+	   <th> Seller (Contact for purchase)</th>
 	   </tr>
 	  <?php
 	include "db_connect.php";
@@ -193,7 +193,9 @@ include "template.php"; ?>
 	$condition = $row['cond'];
  	$price = $row['price'];
 	$seller = $row['username'];
-	$seller_id = $row['seller_id'];
+
+//	$seller_id = $row['seller_id']; //this was raising an undefined variable error for some reason. It doesn't seem to be used anywhere else, so it's commented out for now.
+
 //	$seller_rating = $row['rating'];
 //	if ($seller_rating == -1){
 //	 $seller_rating = "Not Rated";
@@ -205,7 +207,7 @@ else {
 	$td = "<td>";
 }
 	$sellerLink = "<a href='profile.php?username=$seller'>$seller<a>";
-	echo"<tr>$td $href </td> $td $condition </td> $td $$price </td> $td $sellerLink </td> </tr>";
+	echo"<tr>$td $href </td> $td $condition </td> $td $$price </td> $td $sellerLink</td> </tr>";
 //$td $seller_rating </td></tr>";	 
 	$i++;
 }

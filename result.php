@@ -59,7 +59,7 @@
 		<tr><th> Name </th>
 		<th> Quality </th>
 		<th> Price </th>
-		<th> Seller </th>
+		<th> Seller (Contact for purchase)</th>
 		<th> Seller Rating </th></tr>
 		
 		<?php

@@ -32,9 +32,12 @@
 		echo "<h3>Seller Rating: $rating</h3>";
 		echo "<h3>Email: $email</h3>";
 	}
-
 	
 	?>
+	<br/>
+	Contact this seller to coordinate a game purchase.
+	<br/>
+
 	<br>Listings: 
 	<table class="displayTable">
 	<tr><th> Name </th><th> Quality </th><th> Price </th><th> Manual </th></tr>

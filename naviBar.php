@@ -46,8 +46,8 @@ function priceCheck(){
 		$type1 = $_GET['Type'] + 0;
 		$number = $type1 + 0.00;
 		if ($number >= 100.00){
-			$s = "merch.price > $type1";
-			$_SESSION['navDisplay'][0] = "prices higher than 100";
+			$s = "merch.price >= $type1";
+			$_SESSION['navDisplay'][0] = "prices greater than or equal to $100";
 	}
 		else{
 		$type2 = $type1 + 9.99;
