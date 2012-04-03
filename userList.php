@@ -36,7 +36,7 @@ include "template.php"; ?>
 		else {
 			$td = "<td>";
 		}
-		echo"<tr>$td <a href='profile.php?username=$username'>$username<a></td> $td $email </td> $td rating </tr>"; 
+		echo"<tr>$td <a href='profile.php?username=$username'>$username<a></td> $td $email </td> $td rating </td></tr>"; 
 		$i++;
 	}
 			

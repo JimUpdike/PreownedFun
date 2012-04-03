@@ -45,19 +45,35 @@ include "db_connect.php";
 	<tr><th> Name </th>
 	<th> Quality </th>
 	<th> Price </th>
+	<th> Manual </th>
 	<th> Delete </th></tr>
 	<?php
 		$q2 = "select * from for_sale inner join merch inner join game_info on for_sale.seller_id = $uID and merch.merch_id = for_sale.merch_id and game_info.game_id = merch.game_id"; 
 		$r2 = mysqli_query($db, $q2)
 			or die ("error getting list");
-		while ($row2 = mysqli_fetch_array($r2)){
-			echo "<tr>";
-			echo "<td>".$row2['title']."</td>";
-			echo "<td>".$row2['cond']."</td>";
-			echo "<td>".$row2['price']."</td>";
-			$link = "deletePost.php?id=".$row2['merch_id'];
-			echo "<td><a href=".$link.">Delete<a></td>";
-			echo "</tr>";
+
+		$i = 0;
+		while($row2 = mysqli_fetch_array($r2)){	
+			$name = $row2['title'];
+			$cond = $row2['cond'];
+			$price = $row2['price'];
+			$manual = $row2['manual'];
+			$id = $row2['merch_id'];
+			if ($manual == 'Y'){
+				$manual = 'Yes';
+			} else{
+				$manual = 'No';
+			}
+			$id = $row2['merch_id'];
+			
+			if ($i % 2 == 0){
+				$td = "<td class=off>";
+			}
+			else {
+				$td = "<td>";
+			}
+			echo"<tr>$td <a href='gamepost.php?id=$id'>$name<a></td> $td $cond </td> $td $price </td>$td $manual </td>$td <a href='deletePost.php?id=$id'>Delete<a></td> </td></tr>"; 
+			$i++;
 		}
 		
 	

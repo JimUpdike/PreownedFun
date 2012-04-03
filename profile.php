@@ -32,21 +32,38 @@
 		echo "<h3>Seller Rating: $rating</h3>";
 		echo "<h3>Email: $email</h3>";
 	}
+
 	
 	?>
 	<br>Listings: 
 	<table class="displayTable">
-	<tr><th> Name </th><th> Quality </th><th> Price </th></tr>
+	<tr><th> Name </th><th> Quality </th><th> Price </th><th> Manual </th></tr>
 	<?php
-#	$query = "SELECT * FROM for_sale INNER JOIN game_info ON for_sale.seller_id = '$user_id'";
-#	$result = mysqli_query($db, $query) or die("Error Querying Database");
-#	while($row = mysqli_fetch_array($result)) {
-#		$name = $row['title'];
-#		$cond = $row['cond'];
-#		$price = $row['price'];
-#		$id = $row['post_id'];
-#		echo "<tr><td><a href='gamepost.php?id=$id'>$name<a></td><td>$cond</td><td>$price</td></tr>\n";
-#	}
+	$query = "SELECT * FROM for_sale INNER JOIN game_info INNER JOIN merch ON for_sale.seller_id = '$user_id' AND for_sale.merch_id = merch.merch_id AND merch.game_id = game_info.game_id";
+	$result = mysqli_query($db, $query) or die("Error Querying Database");
+	
+	$i = 0;
+	while($row = mysqli_fetch_array($result)){	
+		$name = $row['title'];
+		$cond = $row['cond'];
+		$price = $row['price'];
+		$manual = $row['manual'];
+		if ($manual == 'Y'){
+			$manual = 'Yes';
+		} else{
+			$manual = 'No';
+		}
+		$id = $row['merch_id'];
+		
+		if ($i % 2 == 0){
+			$td = "<td class=off>";
+		}
+		else {
+			$td = "<td>";
+		}
+		echo"<tr>$td <a href='gamepost.php?id=$id'>$name<a></td> $td $cond </td> $td $price </td>$td $manual </td></tr>"; 
+		$i++;
+	}
 					
 	mysqli_close($db);
 	?>
