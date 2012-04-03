@@ -12,6 +12,9 @@ include "db_connect.php";
 			<li class=browseLI>
 			<a href="changePass.php"> Change Password </a></br></br>
 			</li>
+			<li class=browseLI>
+			<a href="changeEmail.php"> Change Email </a></br></br>
+			</li>
 		<li class=browseLI>
 			<a href="logout.php"> Logout </a>
 			</li>
@@ -31,9 +34,11 @@ include "db_connect.php";
 		or die ("error selecting");
 	if ($row = mysqli_fetch_array($result))
 	{	$uID = $row['user_id'];
-		echo "Thank you for logging in ".$row['username'];
-		echo " <br/> You can use the navigation bar on the right to hopefully figure out where to go";
-		echo "<br/>  Your current postings:";
+		$uEmail = $row['email'];
+		echo "<h2> Thank you for logging in ".$row['username']."</h2>";
+		echo "<br>Your email: $uEmail<br>";
+		
+		echo "<br>Your current postings:<br>";
 	}
 	else {
 	echo "You aren't logged in!";

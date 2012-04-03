@@ -44,8 +44,12 @@
 		echo "Game Condition: $nme <br>";
 		echo "Manual: $manul <br><br>";	
 		
-		echo "Have more questions? Email the seller (<a href='profile.php?username=$user'>$user<a>) at $email";
- 
+		echo "Have more questions? Email the seller (<a href='profile.php?username=$user'>$user<a>) at $email<br><br>";
+		
+		$currentUser = $_SESSION['username'];
+		if ($currentUser == $user){
+			echo "<b>Note:</b> This is your game. <a href='deletePost.php?id=$game_id'>Click here<a> to delete the posting.";
+		}
   }
   }
  ?>

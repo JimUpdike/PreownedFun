@@ -25,14 +25,12 @@ include "template.php"; ?>
 
 </div>
 <div id="right">
-       <h2>Change Password</h2>
+       <h2>Change Email</h2>
 	   <html>
-	<form action="changePass2.php" method="post">
-	Enter your old password: <br><input type="password" name="oldPassword"/>
+	<form action="changeEmail2.php" method="post">
+	Enter your password: <br><input type="password" name="password"/>
 	<br>
-	Enter a new password: <br><input type="password" name="newPassword"/>
-	<br>
-	Reenter your new password: <br><input type="password" name="newPassword2"/>
+	Enter your new email: <br><input type="text" name="newEmail"/>
 	<br>
 	<input type="submit" value="Submit" />
 	</form>

@@ -26,23 +26,21 @@ include "template.php";
 <div id="right">
   <?php 
   include "db_connect.php";
-  $oldPw = $_POST['oldPassword'];
-  $newPw = $_POST['newPassword'];
-  $newPw2 = $_POST['newPassword2'];
+  $pass = $_POST['password'];
+  $newEmail = $_POST['newEmail'];
   $username= $_SESSION['username'];
-  $query = "select * from users where username='$username' AND password=SHA('$oldPw');";
+  $query = "select * from users where username='$username' AND password=SHA('$pass');";
   $result = mysqli_query($db, $query);
-  if ($row = mysqli_fetch_array($result) && $newPw == $newPw2){
-	echo "Your password was successfully changed!";
-	$query2 = "update users set password=SHA('$newPw') where username='$username';";
+  if ($row = mysqli_fetch_array($result)){
+	echo "Your email has been changed.";
+	$query2 = "update users set email='$newEmail' where username='$username';";
 	$result2 = mysqli_query($db, $query2) or die("Error Querying Database");
   }
   else{
 	echo "Invalid input, please try again.<br>";
-	echo "<form action='changePass2.php' method='post'>";
-	echo "Enter your old password: <br><input type='password' name='oldPassword'/><br>";
-	echo "Enter a new password: <br><input type='password' name='newPassword'/><br>";
-	echo "Reenter your new password: <br><input type='password' name='newPassword2'/><br>";
+	echo "<form action='changeEmail2.php' method='post'>";
+	echo "Enter your password: <br><input type='password' name='password'/><br>";
+	echo "Enter your new email: <br><input type='text' name='newEmail'/><br>";
 	echo "<input type='submit' value='Submit' /></form>";
   }
   ?>
