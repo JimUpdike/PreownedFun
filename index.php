@@ -180,7 +180,7 @@ include "template.php"; ?>
 			 $query =  $_SESSION['dbNav'];
 		}
 		else{
-			$query = "SELECT merch.*, users.username, game_info.* from for_sale INNER JOIN users INNER JOIN game_info INNER JOIN merch on for_sale.seller_id = users.user_id and merch.merch_id = for_sale.merch_id and game_info.game_id = merch.game_id";
+			$query = "SELECT merch.*, users.username, game_info.*, for_sale.* from for_sale INNER JOIN users INNER JOIN game_info INNER JOIN merch on for_sale.seller_id = users.user_id and merch.merch_id = for_sale.merch_id and game_info.game_id = merch.game_id";
 
 		}	
 		$display = mysqli_query($db, $query) or die($query);
@@ -204,7 +204,7 @@ include "template.php"; ?>
 else {
 	$td = "<td>";
 }
-	$sellerLink = "<a href='profile.php?username=$selleri_id'>$seller<a>";
+	$sellerLink = "<a href='profile.php?username=$seller_id'>$seller<a>";
 	echo"<tr>$td $href </td> $td $condition </td> $td $price </td> $td $sellerLink </td> </tr>";
 //$td $seller_rating </td></tr>";	 
 	$i++;
