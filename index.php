@@ -72,11 +72,11 @@ include "template.php"; ?>
 			Platform
 		 </li>
 		 <li class=browseLI>
-			<a href="naviBar.php?Column=Platform&&Type=Nintendo Entertainment System (NES)">Nintendo Entertainment System (NES)</a>
+			<a href="naviBar.php?Column=Platform&&Type=Nintendo Entertainment System">Nintendo Entertainment System (NES)</a>
 		</li>
 			<br/>
 		 <li class=browseLI>
-			<a href="naviBar.php?Column=Platform&&Type=Super Nintendo Entertainment System (NES)">Super Nintendo Entertainment System (SNES)</a>
+			<a href="naviBar.php?Column=Platform&&Type=Super Nintendo">Super Nintendo Entertainment System (SNES)</a>
 		</li>
 			<br/>
 		 <li class=browseLI>
@@ -142,6 +142,31 @@ include "template.php"; ?>
 ?>
 </div>
 <div id="right">
+<?php
+ 	if (isset($_SESSION['navDisplay'][0] )||isset($_SESSION['navDisplay'][1]) || isset($_SESSION['naviDisplay'][2]) ){
+		$nowDis = "Narrowed diplayed games to games with:";
+		$moreThanone1 = False;
+		if (isset($_SESSION['navDisplay'][0]) ){
+			$nowDis = $nowDis.$_SESSION['navDisplay'][0];
+		$moreThanone1 = true;
+		}
+		if (isset($_SESSION['navDisplay'][1]) ){
+			if ($moreThanone1 == true){
+				$nowDis = $nowDis.', ';
+			}	
+			$nowDis = $nowDis.$_SESSION['navDisplay'][1];
+		$moreThanone1 = true;
+		}
+		if (isset($_SESSION['navDisplay'][2] )){
+			if ($moreThanone1 == true){
+				$nowDis = $nowDis.', ';
+			}	
+			$nowDis = $nowDis.$_SESSION['navDisplay'][2];
+		$moreThanone1 = true;
+		}
+		echo $nowDis;
+	}
+?>
        <table class="displayTable">
 	   <tr>
 	   <th> Name </th>
@@ -155,7 +180,7 @@ include "template.php"; ?>
 			 $query =  $_SESSION['dbNav'];
 		}
 		else{
-			$query = "SELECT merch.*, users.username, game_info.* from for_sale INNER JOIN users INNER JOIN game_info INNER JOIN merch on for_sale.seller_id = users.user_id and merch.merch_id = for_sale.merch_id and game_info.game_id = merch.game_id";
+			$query = "SELECT merch.*, users.username, game_info.*, for_sale.* from for_sale INNER JOIN users INNER JOIN game_info INNER JOIN merch on for_sale.seller_id = users.user_id and merch.merch_id = for_sale.merch_id and game_info.game_id = merch.game_id";
 
 		}	
 		$display = mysqli_query($db, $query) or die($query);
@@ -168,6 +193,7 @@ include "template.php"; ?>
 	$condition = $row['cond'];
  	$price = $row['price'];
 	$seller = $row['username'];
+	$seller_id = $row['seller_id'];
 //	$seller_rating = $row['rating'];
 //	if ($seller_rating == -1){
 //	 $seller_rating = "Not Rated";
@@ -178,7 +204,7 @@ include "template.php"; ?>
 else {
 	$td = "<td>";
 }
-	$sellerLink = "<a href='profile.php?username=$seller'>$seller<a>";
+	$sellerLink = "<a href='profile.php?username=$seller_id'>$seller<a>";
 	echo"<tr>$td $href </td> $td $condition </td> $td $price </td> $td $sellerLink </td> </tr>";
 //$td $seller_rating </td></tr>";	 
 	$i++;

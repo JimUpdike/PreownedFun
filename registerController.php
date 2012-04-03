@@ -1,10 +1,10 @@
 <?php
 	session_start();
 	include "db_connect.php";
-	$name = $_POST['username'];
-	$em = $_POST['email'];
-	$pass = $_POST['password'];
-	$pass2 = $_POST['password2'];
+	$name = mysqli_real_escape_string($db, trim($_POST['username']));
+	$em = mysqli_real_escape_string($db,trim ($_POST['email']));
+	$pass =mysqli_real_escape_string($db, trim($_POST['password']));
+	$pass2 =mysqli_real_escape_string($db, trim($_POST['password2']));
 	
 	if($name == null) {
 		header("Location: register.php?bad=1");
