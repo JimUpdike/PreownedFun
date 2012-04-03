@@ -92,6 +92,11 @@
 		?>
 
 	</table>
+		<?php
+			if($rowcount == 0) {
+				echo "No search results.";
+			}
+		?>
 
 </div>
 </body>
