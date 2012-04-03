@@ -1,5 +1,5 @@
 HOW TO INSTALL OUR PROJECT
 1. After cloning our project from git@github.com:JimUpdike/PreownedFun.git, make sure it's placed in xampp/htdocs
-2. Source the users.sql file (source /your_directories_to_xampp/xampp/htdocs/whatever_you_named_your_git_directory/preowneddb.sql)
+2. Source the preowneddb.sql file (source /your_directories_to_xampp/xampp/htdocs/whatever_you_named_your_git_directory/preowneddb.sql)
 3. Now go to localhost/git_directory_name/register.php and register your Preownedfun account.
 4. Current features include: Creating an account, logging in to said account, changing your password, viewing your account settings page while logged in (doesn't do anything yet), and logging out.
