@@ -19,11 +19,17 @@
 <div id="right">
 <h1><?php echo "$name" ?></h1>
 	<?php
-	$query2 = "SELECT * FROM userRep WHERE username = '$name'";
+	$query2 = "SELECT * FROM users WHERE username = '$name'";
 	$result2 = mysqli_query($db, $query2) or die("Error Querying Database");
 	while($row2 = mysqli_fetch_array($result2)){
 		$rating = $row2['rating'];
+		if ($rating == -1.00){
+			$rating = 'This user has not been rated.';
+		}
+		$email = $row2['email'];
+		$user_id = $row2['user_id'];
 		echo "<h3>Seller Rating: $rating</h3>";
+		echo "<h3>Email: $email</h3>";
 	}
 	
 	?>
@@ -31,15 +37,15 @@
 	<table class="displayTable">
 	<tr><th> Name </th><th> Quality </th><th> Price </th></tr>
 	<?php
-	$query = "SELECT * FROM currentPostings INNER JOIN userRep ON userRep.username = '$name' AND currentPostings.seller_id = userRep.id";
-	$result = mysqli_query($db, $query) or die("Error Querying Database");
-	while($row = mysqli_fetch_array($result)) {
-		$name = $row['gameName'];
-		$cond = $row['cond'];
-		$price = $row['price'];
-		$id = $row['post_id'];
-		echo "<tr><td><a href='gamepost.php?id=$id'>$name<a></td><td>$cond</td><td>$price</td></tr>\n";
-	}
+#	$query = "SELECT * FROM for_sale INNER JOIN game_info ON for_sale.seller_id = '$user_id'";
+#	$result = mysqli_query($db, $query) or die("Error Querying Database");
+#	while($row = mysqli_fetch_array($result)) {
+#		$name = $row['title'];
+#		$cond = $row['cond'];
+#		$price = $row['price'];
+#		$id = $row['post_id'];
+#		echo "<tr><td><a href='gamepost.php?id=$id'>$name<a></td><td>$cond</td><td>$price</td></tr>\n";
+#	}
 					
 	mysqli_close($db);
 	?>
