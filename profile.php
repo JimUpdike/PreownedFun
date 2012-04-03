@@ -4,8 +4,8 @@
 <?php 
 	session_start();
 	include "template.php"; 
-	$name = $_GET['username'];
 	include('db_connect.php');
+	$name = mysqli_real_escape_string($db, trim($_GET['username']));
 ?>
 
 <div id="left">
@@ -64,7 +64,7 @@
 		else {
 			$td = "<td>";
 		}
-		echo"<tr>$td <a href='gamepost.php?id=$id'>$name<a></td> $td $cond </td> $td $$price </td>$td $manual </td></tr>"; 
+		echo"<tr>$td <a href='gamePost.php?id=$id'>$name<a></td> $td $cond </td> $td $$price </td>$td $manual </td></tr>"; 
 		$i++;
 	}
 					

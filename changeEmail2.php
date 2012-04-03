@@ -27,7 +27,7 @@ include "template.php";
   <?php 
   include "db_connect.php";
   $pass = $_POST['password'];
-  $newEmail = $_POST['newEmail'];
+  $newEmail =mysqli_real_escape_string($db, trim( $_POST['newEmail']));
   $username= $_SESSION['username'];
   $query = "select * from users where username='$username' AND password=SHA('$pass');";
   $result = mysqli_query($db, $query);

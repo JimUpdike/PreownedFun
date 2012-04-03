@@ -27,8 +27,8 @@ include "template.php";
   <?php 
   include "db_connect.php";
   $oldPw = $_POST['oldPassword'];
-  $newPw = $_POST['newPassword'];
-  $newPw2 = $_POST['newPassword2'];
+  $newPw = mysqli_real_escape_string($db, trim($_POST['newPassword']));
+  $newPw2 = mysqli_real_escape_string($db, trim($_POST['newPassword2']));
   $username= $_SESSION['username'];
   $query = "select * from users where username='$username' AND password=SHA('$oldPw');";
   $result = mysqli_query($db, $query);

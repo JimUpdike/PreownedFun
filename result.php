@@ -1,5 +1,6 @@
 <html>
 <?php
+	session_start();
 	include "template.php";
 	include "db_connect.php";
 ?>
@@ -11,22 +12,22 @@
 
 	<?php
 		if(isset($_GET['game'])) {
-			$title = $_GET['game'];
+			$title = mysqli_real_escape_string($db, trim($_GET['game']));
 		} else { $title = ""; }
 		if(isset($_GET['price'])) {
-			$price = $_GET['price'];
+			$price = mysqli_real_escape_string($db, trim($_GET['price']));
 		} else { $price = ""; }
 		if(isset($_GET['rating'])) {
-			$esrb = $_GET['rating'];
+			$esrb = mysqli_real_escape_string($db, trim($_GET['rating']));
 		} else { $esrb = ""; }
 		if(isset($_GET['genre'])) {
-			$genre = $_GET['genre'];
+			$genre = mysqli_real_escape_string($db, trim($_GET['genre']));
 		} else { $genre = ""; }
 		if(isset($_GET['cond'])) {
-			$cond = $_GET['cond'];
+			$cond = mysqli_real_escape_string($db, trim($_GET['cond']));
 		} else { $cond = ""; }
 		if(isset($_GET['console'])) {
-			$platform = $_GET['console'];
+			$platform =mysqli_real_escape_string($db, trim( $_GET['console']));
 		} else { $platform = ""; }
 		
 
@@ -74,7 +75,7 @@
 				}
 
 				echo "<tr>";
-				$link = "gamepost.php?id=".$row['game_id'];
+				$link = "gamePost.php?id=".$row['game_id'];
 				echo $td.'<a href="'.$link.'">'.$row['title']."<a></td>";
 				echo $td.$row['cond']."</td>";
 				echo $td.'$'.$row['price']."</td>";
