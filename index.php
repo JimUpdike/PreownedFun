@@ -72,11 +72,11 @@ include "template.php"; ?>
 			Platform
 		 </li>
 		 <li class=browseLI>
-			<a href="naviBar.php?Column=Platform&&Type=Nintendo Entertainment System (NES)">Nintendo Entertainment System (NES)</a>
+			<a href="naviBar.php?Column=Platform&&Type=Nintendo Entertainment System">Nintendo Entertainment System (NES)</a>
 		</li>
 			<br/>
 		 <li class=browseLI>
-			<a href="naviBar.php?Column=Platform&&Type=Super Nintendo Entertainment System (NES)">Super Nintendo Entertainment System (SNES)</a>
+			<a href="naviBar.php?Column=Platform&&Type=Super Nintendo">Super Nintendo Entertainment System (SNES)</a>
 		</li>
 			<br/>
 		 <li class=browseLI>
@@ -142,6 +142,31 @@ include "template.php"; ?>
 ?>
 </div>
 <div id="right">
+<?php
+ 	if (isset($_SESSION['navDisplay'][0] )||isset($_SESSION['navDisplay'][1]) || isset($_SESSION['naviDisplay'][2]) ){
+		$nowDis = "Narrowed diplayed games to games with:";
+		$moreThanone1 = False;
+		if (isset($_SESSION['navDisplay'][0]) ){
+			$nowDis = $nowDis.$_SESSION['navDisplay'][0];
+		$moreThanone1 = true;
+		}
+		if (isset($_SESSION['navDisplay'][1]) ){
+			if ($moreThanone1 == true){
+				$nowDis = $nowDis.', ';
+			}	
+			$nowDis = $nowDis.$_SESSION['navDisplay'][1];
+		$moreThanone1 = true;
+		}
+		if (isset($_SESSION['navDisplay'][2] )){
+			if ($moreThanone1 == true){
+				$nowDis = $nowDis.', ';
+			}	
+			$nowDis = $nowDis.$_SESSION['navDisplay'][2];
+		$moreThanone1 = true;
+		}
+		echo $nowDis;
+	}
+?>
        <table class="displayTable">
 	   <tr>
 	   <th> Name </th>

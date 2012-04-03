@@ -68,8 +68,8 @@ include "db_connect.php";
 <tr><td>Console: </td><td>
 <select name="console">
 <option></option>
-<option>Nintendo Entertainment System (NES)</option>
-<option>Super Nintendo Entertainment System (SNES)</option>
+<option>Nintendo Entertainment System</option>
+<option>Super Nintendo</option>
 <option>Sega Saturn</option>
 <option>Dreamcast</option>
 <option>Nintendo 64</option>
