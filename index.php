@@ -76,7 +76,7 @@ include "template.php"; ?>
 		</li>
 			<br/>
 		 <li class=browseLI>
-			<a href="naviBar.php?Column=Platform&&Type=Super Nintendo">Super Nintendo Entertainment System (SNES)</a>
+		<a href="naviBar.php?Column=Platform&&Type=Super Nintendo">Super Nintendo Entertainment System (SNES)</a>
 		</li>
 			<br/>
 		 <li class=browseLI>
@@ -164,7 +164,10 @@ include "template.php"; ?>
 			$nowDis = $nowDis.$_SESSION['navDisplay'][2];
 		$moreThanone1 = true;
 		}
-		echo $nowDis;
+		echo $nowDis." Click remove navigation to remove the criteria";
+	}
+	else{
+		echo "Currently displaying every game in the library";
 	}
 ?>
        <table class="displayTable">
