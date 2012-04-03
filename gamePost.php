@@ -44,7 +44,10 @@
 		echo "Game Condition: $nme <br>";
 		echo "Manual: $manul <br><br>";	
 		
-		echo "Have more questions? Email the seller (<a href='profile.php?username=$user'>$user<a>) at $email<br><br>";
+		echo "Have more questions? Email the seller (<a href='profile.php?username=$user'>$user<a>)";  
+		echo "at <a href= 'mailto:$email'>";
+		echo "$email";
+		echo"<br>";
 		
 		$currentUser = $_SESSION['username'];
 		if ($currentUser == $user){
