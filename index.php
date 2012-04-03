@@ -193,6 +193,7 @@ include "template.php"; ?>
 	$condition = $row['cond'];
  	$price = $row['price'];
 	$seller = $row['username'];
+	$seller_id = $row['seller_id'];
 //	$seller_rating = $row['rating'];
 //	if ($seller_rating == -1){
 //	 $seller_rating = "Not Rated";
@@ -203,7 +204,7 @@ include "template.php"; ?>
 else {
 	$td = "<td>";
 }
-	$sellerLink = "<a href='profile.php?username=$seller'>$seller<a>";
+	$sellerLink = "<a href='profile.php?username=$selleri_id'>$seller<a>";
 	echo"<tr>$td $href </td> $td $condition </td> $td $price </td> $td $sellerLink </td> </tr>";
 //$td $seller_rating </td></tr>";	 
 	$i++;
