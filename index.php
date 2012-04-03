@@ -204,8 +204,8 @@ include "template.php"; ?>
 else {
 	$td = "<td>";
 }
-	$sellerLink = "<a href='profile.php?username=$seller_id'>$seller<a>";
-	echo"<tr>$td $href </td> $td $condition </td> $td $price </td> $td $sellerLink </td> </tr>";
+	$sellerLink = "<a href='profile.php?username=$seller'>$seller<a>";
+	echo"<tr>$td $href </td> $td $condition </td> $td $$price </td> $td $sellerLink </td> </tr>";
 //$td $seller_rating </td></tr>";	 
 	$i++;
 }

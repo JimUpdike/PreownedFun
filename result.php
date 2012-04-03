@@ -77,7 +77,7 @@
 				$link = "gamepost.php?id=".$row['game_id'];
 				echo $td.'<a href="'.$link.'">'.$row['title']."<a></td>";
 				echo $td.$row['cond']."</td>";
-				echo $td.$row['price']."</td>";
+				echo $td.'$'.$row['price']."</td>";
 				$username = $row['username'];
 				echo $td."<a href='profile.php?username=$username'>$username<a></td>";
 				$rating = $row['rating'];
