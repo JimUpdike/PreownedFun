@@ -15,7 +15,7 @@ session_start();
 	$manul =mysqli_real_escape_string($db, trim($_POST['manual']));
 	$cond =mysqli_real_escape_string($db,trim($_POST['cond']));
 	$console = mysqli_real_escape_string($db, trim($_POST['console']));
-        $price =mysqli_real_escape_string($db, trim($_POST['Price']));	
+    $price =mysqli_real_escape_string($db, trim($_POST['Price']));	
 	$query_for_game = 'Select * from game_info where title ="'.$nme.'"';
 	$result_for_game = mysqli_query($db, $query_for_game);
 	$row = mysqli_fetch_array($result_for_game);
