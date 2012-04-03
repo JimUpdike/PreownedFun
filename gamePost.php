@@ -6,15 +6,13 @@
   include "db_connect.php";
 ?>
 <div id="right">
-<table>
-<tr><th>Name</th><th>Price </th><th>Creator</th><th>Genre</th><th>Year Released</th><th>Manual</th><th>Condition</th><th>Console</th>
-<th>Seller Name</th></tr>
+
 <?php
 
 
   if(isSet($_GET['id'])) {
 	$game_id = $_GET['id'];
-	$query = "Select merch.*,users.username, game_info.* From for_sale INNER JOIN users INNER JOIN game_info INNER JOIN merch ON for_sale.seller_id=users.user_id and for_sale.merch_id = merch.merch_id and merch.game_id = game_info.game_id WHERE merch.merch_id =$game_id";
+	$query = "Select merch.*,users.*, game_info.* From for_sale INNER JOIN users INNER JOIN game_info INNER JOIN merch ON for_sale.seller_id=users.user_id and for_sale.merch_id = merch.merch_id and merch.game_id = game_info.game_id WHERE merch.merch_id =$game_id";
 	$result = mysqli_query($db,$query) or die("Error Querying Database");
 	
 	if($row = mysqli_fetch_array($result)){
@@ -24,11 +22,29 @@
 		$gen = $row['genre'];
 		$yr = $row['yearMade'];
 		$manul = $row['manual'];
+		if ($manul == 'Y'){
+			$manul = 'Yes';
+		} else {
+			$manul = 'No';
+		}
 		$cond = $row['cond'];
 		$console = $row['platform'];
 		$user = $row['username'];
+		$email = $row['email'];
 		
-		echo "<tr><td>$nme</td><td>$price </td><td>$mkr</td><td>$gen</td><td>$yr</td><td>$manul</td><td>$cond</td><td>$console</td><td>$user</td></tr> ";
+		echo "<h1>$nme</h1><br>";		
+		echo "<h3>Game Information</h3>";
+		echo "Game name: $nme <br>";
+		echo "Game Creator: $mkr <br>";	
+		echo "Genre: $gen <br>";
+		echo "Console: $console <br><br>";		
+		echo "<h3>Sale Information</h3>";
+		echo "Seller: <a href='profile.php?username=$user'>$user<a> <br>";
+		echo "Price: $price <br>";
+		echo "Game Condition: $nme <br>";
+		echo "Manual: $manul <br><br>";	
+		
+		echo "Have more questions? Email the seller (<a href='profile.php?username=$user'>$user<a>) at $email";
  
   }
   }
