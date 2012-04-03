@@ -61,7 +61,7 @@
 		else {
 			$td = "<td>";
 		}
-		echo"<tr>$td <a href='gamepost.php?id=$id'>$name<a></td> $td $cond </td> $td $price </td>$td $manual </td></tr>"; 
+		echo"<tr>$td <a href='gamepost.php?id=$id'>$name<a></td> $td $cond </td> $td $$price </td>$td $manual </td></tr>"; 
 		$i++;
 	}
 					
